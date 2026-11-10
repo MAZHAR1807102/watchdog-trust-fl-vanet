@@ -1,0 +1,93 @@
+{
+  "config": {
+    "rounds_plain": 20,
+    "local_epochs": 3,
+    "batch_size": 128,
+    "lr": 0.01,
+    "trust_threshold": "gmm",
+    "test_vehicle_ratio": 0.2,
+    "seed": 5,
+    "krum_f": null,
+    "attack": "none",
+    "attack_scale": 5.0,
+    "attack_sigma": 1.0,
+    "alie_z": 1.0,
+    "uniform_after_filter": false,
+    "bucket_size": 2,
+    "trust_mode": "window",
+    "trust_window": 10.0,
+    "min_obs": 5,
+    "cold_start": "accept",
+    "clients": "observed"
+  },
+  "csv": "/Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.4_d0.5_s5_features.csv",
+  "folds": 3,
+  "results": {
+    "FedAvg": {
+      "accuracy": 0.8983673469387755,
+      "precision": 0.9240139211136891,
+      "recall": 0.8127551020408164,
+      "f1": 0.8648208469055375,
+      "cm": [
+        [
+          2809,
+          131
+        ],
+        [
+          367,
+          1593
+        ]
+      ],
+      "f1_folds": [
+        0.9331283627978478,
+        0.7716262975778547,
+        0.8801955990220048
+      ]
+    },
+    "Median": {
+      "accuracy": 0.9083673469387755,
+      "precision": 0.92230296254891,
+      "recall": 0.8418367346938775,
+      "f1": 0.8802347292611363,
+      "cm": [
+        [
+          2801,
+          139
+        ],
+        [
+          310,
+          1650
+        ]
+      ],
+      "f1_folds": [
+        0.9265274555297757,
+        0.8346972176759411,
+        0.8768233387358185
+      ]
+    },
+    "Trust-FLAD+Median": {
+      "accuracy": 0.8989795918367347,
+      "precision": 0.9226774379688402,
+      "recall": 0.8158163265306122,
+      "f1": 0.8659626320064988,
+      "cm": [
+        [
+          2806,
+          134
+        ],
+        [
+          361,
+          1599
+        ]
+      ],
+      "beta": 0.05250000000000001,
+      "gamma": 0.08000000000000002,
+      "accepted_mean": 28.649999999999995,
+      "f1_folds": [
+        0.9164715066354411,
+        0.7959356477561389,
+        0.8805848903330625
+      ]
+    }
+  }
+}

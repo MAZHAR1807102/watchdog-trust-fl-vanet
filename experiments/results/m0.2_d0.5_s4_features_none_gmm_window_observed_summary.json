@@ -1,0 +1,93 @@
+{
+  "config": {
+    "rounds_plain": 20,
+    "local_epochs": 3,
+    "batch_size": 128,
+    "lr": 0.01,
+    "trust_threshold": "gmm",
+    "test_vehicle_ratio": 0.2,
+    "seed": 4,
+    "krum_f": null,
+    "attack": "none",
+    "attack_scale": 5.0,
+    "attack_sigma": 1.0,
+    "alie_z": 1.0,
+    "uniform_after_filter": false,
+    "bucket_size": 2,
+    "trust_mode": "window",
+    "trust_window": 10.0,
+    "min_obs": 5,
+    "cold_start": "accept",
+    "clients": "observed"
+  },
+  "csv": "/Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.2_d0.5_s4_features.csv",
+  "folds": 3,
+  "results": {
+    "FedAvg": {
+      "accuracy": 0.9220408163265306,
+      "precision": 0.8619854721549637,
+      "recall": 0.726530612244898,
+      "f1": 0.7884828349944629,
+      "cm": [
+        [
+          3806,
+          114
+        ],
+        [
+          268,
+          712
+        ]
+      ],
+      "f1_folds": [
+        0.8166666666666667,
+        0.6651685393258427,
+        0.8424336973478939
+      ]
+    },
+    "Median": {
+      "accuracy": 0.926734693877551,
+      "precision": 0.8640093786635404,
+      "recall": 0.7520408163265306,
+      "f1": 0.8041462084015275,
+      "cm": [
+        [
+          3804,
+          116
+        ],
+        [
+          243,
+          737
+        ]
+      ],
+      "f1_folds": [
+        0.817174515235457,
+        0.7198275862068966,
+        0.8500772797527048
+      ]
+    },
+    "Trust-FLAD+Median": {
+      "accuracy": 0.93,
+      "precision": 0.864,
+      "recall": 0.7714285714285715,
+      "f1": 0.8150943396226416,
+      "cm": [
+        [
+          3801,
+          119
+        ],
+        [
+          224,
+          756
+        ]
+      ],
+      "beta": 0.02,
+      "gamma": 0.08875,
+      "accepted_mean": 36.65,
+      "f1_folds": [
+        0.8373983739837398,
+        0.7334754797441365,
+        0.8487654320987654
+      ]
+    }
+  }
+}

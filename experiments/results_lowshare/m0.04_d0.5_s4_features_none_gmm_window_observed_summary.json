@@ -1,0 +1,288 @@
+{
+  "config": {
+    "rounds_plain": 20,
+    "local_epochs": 3,
+    "batch_size": 128,
+    "lr": 0.01,
+    "trust_threshold": "gmm",
+    "test_vehicle_ratio": 0.2,
+    "seed": 4,
+    "krum_f": null,
+    "attack": "none",
+    "attack_scale": 5.0,
+    "attack_sigma": 1.0,
+    "alie_z": 1.0,
+    "uniform_after_filter": false,
+    "bucket_size": 2,
+    "trust_mode": "window",
+    "trust_window": 10.0,
+    "min_obs": 5,
+    "cold_start": "accept",
+    "clients": "observed",
+    "poison_set": "label",
+    "poison_frac": 0.3,
+    "uploads": "auto",
+    "trust_memory": 0.0,
+    "trust_norm": "none",
+    "norm_radius": 300.0,
+    "warmup": 0.0
+  },
+  "csv": "/Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.04_d0.5_s4_features.csv",
+  "folds": 3,
+  "results": {
+    "FedAvg": {
+      "accuracy": 0.9526530612244898,
+      "precision": 0.21875,
+      "recall": 0.07142857142857142,
+      "f1": 0.1076923076923077,
+      "cm": [
+        [
+          4654,
+          50
+        ],
+        [
+          182,
+          14
+        ]
+      ],
+      "f1_folds": [
+        0.0,
+        0.2204724409448819,
+        0.0
+      ]
+    },
+    "Krum": {
+      "accuracy": 0.9438775510204082,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "cm": [
+        [
+          4625,
+          79
+        ],
+        [
+          196,
+          0
+        ]
+      ],
+      "pick_mal_rate": 0.016666666666666666,
+      "f1_folds": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "TrimmedMean": {
+      "accuracy": 0.9510204081632653,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "cm": [
+        [
+          4660,
+          44
+        ],
+        [
+          196,
+          0
+        ]
+      ],
+      "f1_folds": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Median": {
+      "accuracy": 0.9479591836734694,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "cm": [
+        [
+          4645,
+          59
+        ],
+        [
+          196,
+          0
+        ]
+      ],
+      "f1_folds": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Trust-FLAD": {
+      "accuracy": 0.9510204081632653,
+      "precision": 0.19444444444444445,
+      "recall": 0.07142857142857142,
+      "f1": 0.1044776119402985,
+      "cm": [
+        [
+          4646,
+          58
+        ],
+        [
+          182,
+          14
+        ]
+      ],
+      "beta": 0.075,
+      "gamma": 0.13541666666666666,
+      "accepted_mean": 41.65,
+      "f1_folds": [
+        0.0,
+        0.2074074074074074,
+        0.0
+      ]
+    },
+    "Trust-FLAD+Krum": {
+      "accuracy": 0.9422448979591836,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "cm": [
+        [
+          4617,
+          87
+        ],
+        [
+          196,
+          0
+        ]
+      ],
+      "beta": 0.075,
+      "gamma": 0.13541666666666666,
+      "accepted_mean": 41.65,
+      "pick_mal_rate": 0.0,
+      "f1_folds": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Trust-FLAD+Median": {
+      "accuracy": 0.9469387755102041,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "cm": [
+        [
+          4640,
+          64
+        ],
+        [
+          196,
+          0
+        ]
+      ],
+      "beta": 0.075,
+      "gamma": 0.13541666666666666,
+      "accepted_mean": 41.65,
+      "f1_folds": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Krum+Bucket": {
+      "accuracy": 0.9583673469387755,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "cm": [
+        [
+          4696,
+          8
+        ],
+        [
+          196,
+          0
+        ]
+      ],
+      "pick_mal_rate": 0.08333333333333333,
+      "bkt_dirty_frac": 0.08000000000000002,
+      "f1_folds": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Median+Bucket": {
+      "accuracy": 0.9508163265306122,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "cm": [
+        [
+          4659,
+          45
+        ],
+        [
+          196,
+          0
+        ]
+      ],
+      "bkt_dirty_frac": 0.08000000000000002,
+      "f1_folds": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Trust-FLAD+Krum+Bucket": {
+      "accuracy": 0.9491836734693877,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "cm": [
+        [
+          4651,
+          53
+        ],
+        [
+          196,
+          0
+        ]
+      ],
+      "beta": 0.075,
+      "gamma": 0.13541666666666666,
+      "accepted_mean": 41.65,
+      "pick_mal_rate": 0.0,
+      "bkt_dirty_frac": 0.007291666666666666,
+      "f1_folds": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Trust-FLAD+Median+Bucket": {
+      "accuracy": 0.9516326530612245,
+      "precision": 0.2028985507246377,
+      "recall": 0.07142857142857142,
+      "f1": 0.10566037735849057,
+      "cm": [
+        [
+          4649,
+          55
+        ],
+        [
+          182,
+          14
+        ]
+      ],
+      "beta": 0.075,
+      "gamma": 0.13541666666666666,
+      "accepted_mean": 41.65,
+      "bkt_dirty_frac": 0.007291666666666666,
+      "f1_folds": [
+        0.0,
+        0.2153846153846154,
+        0.0
+      ]
+    }
+  }
+}

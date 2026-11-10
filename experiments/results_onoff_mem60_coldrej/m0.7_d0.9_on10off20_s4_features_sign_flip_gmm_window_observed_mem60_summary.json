@@ -1,0 +1,106 @@
+{
+  "config": {
+    "rounds_plain": 20,
+    "local_epochs": 3,
+    "batch_size": 128,
+    "lr": 0.01,
+    "trust_threshold": "gmm",
+    "test_vehicle_ratio": 0.2,
+    "seed": 4,
+    "krum_f": null,
+    "attack": "sign_flip",
+    "attack_scale": 5.0,
+    "attack_sigma": 1.0,
+    "alie_z": 1.0,
+    "uniform_after_filter": false,
+    "bucket_size": 2,
+    "trust_mode": "window",
+    "trust_window": 10.0,
+    "min_obs": 5,
+    "cold_start": "reject",
+    "clients": "observed",
+    "poison_set": "label",
+    "poison_frac": 0.3,
+    "uploads": "auto",
+    "trust_memory": 60.0,
+    "trust_norm": "none",
+    "norm_radius": 300.0
+  },
+  "csv": "../dataset_fl-training-v3-ring/data/m0.7_d0.9_on10off20_s4_features.csv",
+  "folds": 3,
+  "results": {
+    "Trust-FLAD": {
+      "accuracy": 0.8504081632653061,
+      "precision": 0.8918918918918919,
+      "recall": 0.8947521865889213,
+      "f1": 0.8933197496725368,
+      "cm": [
+        [
+          1098,
+          372
+        ],
+        [
+          361,
+          3069
+        ]
+      ],
+      "beta": 0.11999999999999995,
+      "gamma": 0.06,
+      "accepted_mean": 18.3,
+      "f1_folds": [
+        0.8462222222222222,
+        0.9379425239483549,
+        0.8927927927927928
+      ]
+    },
+    "Trust-FLAD+Krum": {
+      "accuracy": 0.8159183673469388,
+      "precision": 0.9305177111716622,
+      "recall": 0.7965014577259475,
+      "f1": 0.8583097706566133,
+      "cm": [
+        [
+          1266,
+          204
+        ],
+        [
+          698,
+          2732
+        ]
+      ],
+      "beta": 0.11999999999999995,
+      "gamma": 0.06,
+      "accepted_mean": 18.3,
+      "pick_mal_rate": 0.0,
+      "f1_folds": [
+        0.7529532614278377,
+        0.8517350157728707,
+        0.9581818181818181
+      ]
+    },
+    "Trust-FLAD+Median": {
+      "accuracy": 0.3,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "cm": [
+        [
+          1470,
+          0
+        ],
+        [
+          3430,
+          0
+        ]
+      ],
+      "beta": 0.11999999999999995,
+      "gamma": 0.06,
+      "accepted_mean": 18.3,
+      "f1_folds": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  }
+}

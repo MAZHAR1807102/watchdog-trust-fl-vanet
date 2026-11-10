@@ -1,0 +1,95 @@
+{
+  "config": {
+    "rounds_plain": 20,
+    "local_epochs": 3,
+    "batch_size": 128,
+    "lr": 0.01,
+    "trust_threshold": "gmm",
+    "test_vehicle_ratio": 0.2,
+    "seed": 3,
+    "krum_f": null,
+    "attack": "none",
+    "attack_scale": 5.0,
+    "attack_sigma": 1.0,
+    "alie_z": 1.0,
+    "uniform_after_filter": false,
+    "bucket_size": 2,
+    "trust_mode": "window",
+    "trust_window": 10.0,
+    "min_obs": 5,
+    "cold_start": "accept",
+    "clients": "observed",
+    "poison_set": "label",
+    "poison_frac": 0.3
+  },
+  "csv": "/Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.5_d0.3_s3_features.csv",
+  "folds": 3,
+  "results": {
+    "FedAvg": {
+      "accuracy": 0.893673469387755,
+      "precision": 0.9217315260166157,
+      "recall": 0.8604081632653061,
+      "f1": 0.8900147772852016,
+      "cm": [
+        [
+          2271,
+          179
+        ],
+        [
+          342,
+          2108
+        ]
+      ],
+      "f1_folds": [
+        0.8985680190930787,
+        0.8490566037735849,
+        0.9194673430564363
+      ]
+    },
+    "Median": {
+      "accuracy": 0.883061224489796,
+      "precision": 0.9310978410656867,
+      "recall": 0.8273469387755102,
+      "f1": 0.8761616598227794,
+      "cm": [
+        [
+          2300,
+          150
+        ],
+        [
+          423,
+          2027
+        ]
+      ],
+      "f1_folds": [
+        0.8728606356968215,
+        0.8383484954513646,
+        0.9142125480153649
+      ]
+    },
+    "Trust-FLAD+Median": {
+      "accuracy": 0.8708163265306123,
+      "precision": 0.9094186570527264,
+      "recall": 0.8236734693877551,
+      "f1": 0.8644249303919469,
+      "cm": [
+        [
+          2249,
+          201
+        ],
+        [
+          432,
+          2018
+        ]
+      ],
+      "beta": 0.11600000000000003,
+      "gamma": 0.17600000000000002,
+      "accepted_mean": 23.5,
+      "f1_folds": [
+        0.8741176470588236,
+        0.796875,
+        0.9147982062780269
+      ]
+    }
+  }
+}

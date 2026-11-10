@@ -1,0 +1,93 @@
+{
+  "config": {
+    "rounds_plain": 20,
+    "local_epochs": 3,
+    "batch_size": 128,
+    "lr": 0.01,
+    "trust_threshold": "gmm",
+    "test_vehicle_ratio": 0.2,
+    "seed": 5,
+    "krum_f": null,
+    "attack": "none",
+    "attack_scale": 5.0,
+    "attack_sigma": 1.0,
+    "alie_z": 1.0,
+    "uniform_after_filter": false,
+    "bucket_size": 2,
+    "trust_mode": "window",
+    "trust_window": 10.0,
+    "min_obs": 5,
+    "cold_start": "accept",
+    "clients": "observed"
+  },
+  "csv": "/Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.7_d0.5_s5_features.csv",
+  "folds": 3,
+  "results": {
+    "FedAvg": {
+      "accuracy": 0.9226530612244898,
+      "precision": 0.9133026280140883,
+      "recall": 0.9827988338192419,
+      "f1": 0.9467771380424098,
+      "cm": [
+        [
+          1150,
+          320
+        ],
+        [
+          59,
+          3371
+        ]
+      ],
+      "f1_folds": [
+        0.9629629629629629,
+        0.9488870568837593,
+        0.9279862009486848
+      ]
+    },
+    "Median": {
+      "accuracy": 0.9230612244897959,
+      "precision": 0.9135735573015443,
+      "recall": 0.9830903790087464,
+      "f1": 0.9470579974722652,
+      "cm": [
+        [
+          1151,
+          319
+        ],
+        [
+          58,
+          3372
+        ]
+      ],
+      "f1_folds": [
+        0.9651406971860563,
+        0.9474555233760861,
+        0.9281102023245803
+      ]
+    },
+    "Trust-FLAD+Median": {
+      "accuracy": 0.9218367346938775,
+      "precision": 0.9237830319888735,
+      "recall": 0.9682215743440233,
+      "f1": 0.9454804270462633,
+      "cm": [
+        [
+          1196,
+          274
+        ],
+        [
+          109,
+          3321
+        ]
+      ],
+      "beta": 0.055714285714285695,
+      "gamma": 0.11666666666666665,
+      "accepted_mean": 15.199999999999998,
+      "f1_folds": [
+        0.9434954007884363,
+        0.9616494845360825,
+        0.9305135951661632
+      ]
+    }
+  }
+}

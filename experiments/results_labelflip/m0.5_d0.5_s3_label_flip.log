@@ -1,0 +1,369 @@
+/Users/mazharulislam/Downloads/Archive/V3_Codes/main_fl_v3.py:126: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /Users/runner/miniforge3/conda-bld/libtorch_1786372171945/work/torch/csrc/utils/tensor_numpy.cpp:219.)
+  self.y = torch.FloatTensor(y).unsqueeze(1)
+==============================================================
+TRUST-FLAD v3  --  windowed trust, label-free threshold, observed clients
+attack: label_flip  threshold: gmm  trust: window (W=10.0s)
+==============================================================
+
+  /Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.5_d0.5_s3_features.csv  [v3 schema]
+  4900 rows | 50 vehicles | 25 malicious (50%)
+  fold 1/3 | split: 32 train / 18 test subject vehicles (disjoint) | 1764 test rows
+  clients: observed | rows/client min 533 median 725 max 944 | empty 0 | positive share 0.19-0.87
+
+==============================================================
+FedAvg
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.4399 f1=0.3601 
+  round  5 t= 25.2s thr=0.756: acc=0.2772 f1=0.3679 
+  round 10 t= 49.5s thr=0.752: acc=0.2591 f1=0.2006 
+  round 15 t= 73.8s thr=0.702: acc=0.2506 f1=0.1988 
+  round 20 t= 98.0s thr=0.768: acc=0.2500 f1=0.2348 
+  FINAL  acc=0.2500 P=0.2397 R=0.2302 F1=0.2348
+
+==============================================================
+Krum
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.3469 f1=0.0000 f=12 pick_mal=1
+  round  5 t= 25.2s thr=0.756: acc=0.1083 f1=0.0000 f=12 pick_mal=1
+  round 10 t= 49.5s thr=0.752: acc=0.1100 f1=0.0212 f=12 pick_mal=1
+  round 15 t= 73.8s thr=0.702: acc=0.0913 f1=0.0696 f=12 pick_mal=1
+  round 20 t= 98.0s thr=0.768: acc=0.0748 f1=0.0049 f=12 pick_mal=1
+  FINAL  acc=0.0748 P=0.0053 R=0.0045 F1=0.0049
+
+==============================================================
+TrimmedMean
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.4632 f1=0.3021 f=12
+  round  5 t= 25.2s thr=0.756: acc=0.2528 f1=0.2443 f=12
+  round 10 t= 49.5s thr=0.752: acc=0.4076 f1=0.3465 f=12
+  round 15 t= 73.8s thr=0.702: acc=0.3940 f1=0.2016 f=12
+  round 20 t= 98.0s thr=0.768: acc=0.2988 f1=0.4124 f=12
+  FINAL  acc=0.2988 P=0.3549 R=0.4921 F1=0.4124
+
+==============================================================
+Median
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.4751 f1=0.2245 f=12
+  round  5 t= 25.2s thr=0.756: acc=0.3974 f1=0.0585 f=12
+  round 10 t= 49.5s thr=0.752: acc=0.2988 f1=0.3781 f=12
+  round 15 t= 73.8s thr=0.702: acc=0.4371 f1=0.0000 f=12
+  round 20 t= 98.0s thr=0.768: acc=0.3390 f1=0.4400 f=12
+  FINAL  acc=0.3390 P=0.3817 R=0.5193 F1=0.4400
+
+==============================================================
+Trust-FLAD
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.7364 f1=0.7117 acc_hon=23 acc_mal=8 rej_hon=2 rej_mal=17 unknown=19
+  round  5 t= 25.2s thr=0.756: acc=0.8719 f1=0.8765 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=2
+  round 10 t= 49.5s thr=0.752: acc=0.8838 f1=0.8864 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0
+  round 15 t= 73.8s thr=0.702: acc=0.8730 f1=0.8764 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0
+  round 20 t= 98.0s thr=0.768: acc=0.8679 f1=0.8712 acc_hon=24 acc_mal=0 rej_hon=1 rej_mal=25 unknown=0
+  FINAL  acc=0.8679 P=0.8501 R=0.8934 F1=0.8712  beta=0.03 gamma=0.11
+
+==============================================================
+Trust-FLAD+Krum
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.6689 f1=0.6773 acc_hon=23 acc_mal=8 rej_hon=2 rej_mal=17 unknown=19 pick_mal=0
+  round  5 t= 25.2s thr=0.756: acc=0.7727 f1=0.7697 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=2 pick_mal=0
+  round 10 t= 49.5s thr=0.752: acc=0.8294 f1=0.8327 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0 pick_mal=0
+  round 15 t= 73.8s thr=0.702: acc=0.8384 f1=0.8459 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0 pick_mal=0
+  round 20 t= 98.0s thr=0.768: acc=0.8141 f1=0.8194 acc_hon=24 acc_mal=0 rej_hon=1 rej_mal=25 unknown=0 pick_mal=0
+  FINAL  acc=0.8141 P=0.7966 R=0.8435 F1=0.8194  beta=0.03 gamma=0.11
+
+==============================================================
+Trust-FLAD+Median
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.7449 f1=0.7205 acc_hon=23 acc_mal=8 rej_hon=2 rej_mal=17 unknown=19
+  round  5 t= 25.2s thr=0.756: acc=0.8662 f1=0.8715 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=2
+  round 10 t= 49.5s thr=0.752: acc=0.8759 f1=0.8787 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0
+  round 15 t= 73.8s thr=0.702: acc=0.8702 f1=0.8742 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0
+  round 20 t= 98.0s thr=0.768: acc=0.8724 f1=0.8794 acc_hon=24 acc_mal=0 rej_hon=1 rej_mal=25 unknown=0
+  FINAL  acc=0.8724 P=0.8342 R=0.9297 F1=0.8794  beta=0.03 gamma=0.11
+
+==============================================================
+Krum+Bucket
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.6054 f1=0.4852 f=6 buckets=25 bkt_dirty=20 pick_mal=1
+  round  5 t= 25.2s thr=0.756: acc=0.2744 f1=0.2825 f=6 buckets=25 bkt_dirty=19 pick_mal=1
+  round 10 t= 49.5s thr=0.752: acc=0.5754 f1=0.3007 f=6 buckets=25 bkt_dirty=19 pick_mal=1
+  round 15 t= 73.8s thr=0.702: acc=0.1485 f1=0.1006 f=6 buckets=25 bkt_dirty=20 pick_mal=1
+  round 20 t= 98.0s thr=0.768: acc=0.4535 f1=0.3683 f=6 buckets=25 bkt_dirty=21 pick_mal=1
+  FINAL  acc=0.4535 P=0.4363 R=0.3186 F1=0.3683
+
+==============================================================
+Median+Bucket
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.4790 f1=0.3769 f=6 buckets=25 bkt_dirty=20
+  round  5 t= 25.2s thr=0.756: acc=0.2302 f1=0.2897 f=6 buckets=25 bkt_dirty=19
+  round 10 t= 49.5s thr=0.752: acc=0.2228 f1=0.2496 f=6 buckets=25 bkt_dirty=19
+  round 15 t= 73.8s thr=0.702: acc=0.1349 f1=0.0740 f=6 buckets=25 bkt_dirty=20
+  round 20 t= 98.0s thr=0.768: acc=0.2149 f1=0.2411 f=6 buckets=25 bkt_dirty=21
+  FINAL  acc=0.2149 P=0.2333 R=0.2494 F1=0.2411
+
+==============================================================
+Trust-FLAD+Krum+Bucket
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.7636 f1=0.7480 acc_hon=23 acc_mal=8 rej_hon=2 rej_mal=17 unknown=19 buckets=16 bkt_dirty=8 pick_mal=0
+  round  5 t= 25.2s thr=0.756: acc=0.8645 f1=0.8740 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=2 buckets=12 bkt_dirty=0 pick_mal=0
+  round 10 t= 49.5s thr=0.752: acc=0.8316 f1=0.8404 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0 buckets=12 bkt_dirty=0 pick_mal=0
+  round 15 t= 73.8s thr=0.702: acc=0.8107 f1=0.8069 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0 buckets=12 bkt_dirty=0 pick_mal=0
+  round 20 t= 98.0s thr=0.768: acc=0.8294 f1=0.8224 acc_hon=24 acc_mal=0 rej_hon=1 rej_mal=25 unknown=0 buckets=12 bkt_dirty=0 pick_mal=0
+  FINAL  acc=0.8294 P=0.8573 R=0.7902 F1=0.8224  beta=0.03 gamma=0.11
+
+==============================================================
+Trust-FLAD+Median+Bucket
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.6457 f1=0.5545 acc_hon=23 acc_mal=8 rej_hon=2 rej_mal=17 unknown=19 buckets=16 bkt_dirty=8
+  round  5 t= 25.2s thr=0.756: acc=0.8662 f1=0.8703 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=2 buckets=12 bkt_dirty=0
+  round 10 t= 49.5s thr=0.752: acc=0.8764 f1=0.8782 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0 buckets=12 bkt_dirty=0
+  round 15 t= 73.8s thr=0.702: acc=0.8793 f1=0.8819 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0 buckets=12 bkt_dirty=0
+  round 20 t= 98.0s thr=0.768: acc=0.8747 f1=0.8784 acc_hon=24 acc_mal=0 rej_hon=1 rej_mal=25 unknown=0 buckets=12 bkt_dirty=0
+  FINAL  acc=0.8747 P=0.8535 R=0.9048 F1=0.8784  beta=0.03 gamma=0.11
+
+  /Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.5_d0.5_s3_features.csv  [v3 schema]
+  4900 rows | 50 vehicles | 25 malicious (50%)
+  fold 2/3 | split: 34 train / 16 test subject vehicles (disjoint) | 1568 test rows
+  clients: observed | rows/client min 615 median 781 max 940 | empty 0 | positive share 0.05-0.91
+
+==============================================================
+FedAvg
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.6881 f1=0.6353 
+  round  5 t= 25.2s thr=0.756: acc=0.6671 f1=0.7106 
+  round 10 t= 49.5s thr=0.752: acc=0.4987 f1=0.5850 
+  round 15 t= 73.8s thr=0.702: acc=0.4560 f1=0.5189 
+  round 20 t= 98.0s thr=0.768: acc=0.4503 f1=0.4844 
+  FINAL  acc=0.4503 P=0.4561 R=0.5166 F1=0.4844
+
+==============================================================
+Krum
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.8093 f1=0.8050 f=12 pick_mal=0
+  round  5 t= 25.2s thr=0.756: acc=0.9152 f1=0.9188 f=12 pick_mal=0
+  round 10 t= 49.5s thr=0.752: acc=0.8667 f1=0.8622 f=12 pick_mal=0
+  round 15 t= 73.8s thr=0.702: acc=0.7844 f1=0.7568 f=12 pick_mal=0
+  round 20 t= 98.0s thr=0.768: acc=0.8393 f1=0.8454 f=12 pick_mal=0
+  FINAL  acc=0.8393 P=0.8144 R=0.8788 F1=0.8454
+
+==============================================================
+TrimmedMean
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.6390 f1=0.5220 f=12
+  round  5 t= 25.2s thr=0.756: acc=0.7066 f1=0.7335 f=12
+  round 10 t= 49.5s thr=0.752: acc=0.6531 f1=0.6739 f=12
+  round 15 t= 73.8s thr=0.702: acc=0.5242 f1=0.4079 f=12
+  round 20 t= 98.0s thr=0.768: acc=0.5765 f1=0.6697 f=12
+  FINAL  acc=0.5765 P=0.5489 R=0.8584 F1=0.6697
+
+==============================================================
+Median
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.6065 f1=0.4592 f=12
+  round  5 t= 25.2s thr=0.756: acc=0.6186 f1=0.5138 f=12
+  round 10 t= 49.5s thr=0.752: acc=0.7966 f1=0.8244 f=12
+  round 15 t= 73.8s thr=0.702: acc=0.5497 f1=0.4708 f=12
+  round 20 t= 98.0s thr=0.768: acc=0.7334 f1=0.7530 f=12
+  FINAL  acc=0.7334 P=0.7015 R=0.8125 F1=0.7530
+
+==============================================================
+Trust-FLAD
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.8795 f1=0.8877 acc_hon=23 acc_mal=8 rej_hon=2 rej_mal=17 unknown=19
+  round  5 t= 25.2s thr=0.756: acc=0.8661 f1=0.8691 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=2
+  round 10 t= 49.5s thr=0.752: acc=0.8431 f1=0.8353 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0
+  round 15 t= 73.8s thr=0.702: acc=0.8221 f1=0.8146 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0
+  round 20 t= 98.0s thr=0.768: acc=0.8029 f1=0.7897 acc_hon=24 acc_mal=0 rej_hon=1 rej_mal=25 unknown=0
+  FINAL  acc=0.8029 P=0.8467 R=0.7398 F1=0.7897  beta=0.03 gamma=0.11
+
+==============================================================
+Trust-FLAD+Krum
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.8036 f1=0.7984 acc_hon=23 acc_mal=8 rej_hon=2 rej_mal=17 unknown=19 pick_mal=0
+  round  5 t= 25.2s thr=0.756: acc=0.8935 f1=0.9033 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=2 pick_mal=0
+  round 10 t= 49.5s thr=0.752: acc=0.8846 f1=0.8945 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0 pick_mal=0
+  round 15 t= 73.8s thr=0.702: acc=0.8954 f1=0.9004 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0 pick_mal=0
+  round 20 t= 98.0s thr=0.768: acc=0.8782 f1=0.8854 acc_hon=24 acc_mal=0 rej_hon=1 rej_mal=25 unknown=0 pick_mal=0
+  FINAL  acc=0.8782 P=0.8358 R=0.9413 F1=0.8854  beta=0.03 gamma=0.11
+
+==============================================================
+Trust-FLAD+Median
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.8386 f1=0.8428 acc_hon=23 acc_mal=8 rej_hon=2 rej_mal=17 unknown=19
+  round  5 t= 25.2s thr=0.756: acc=0.8814 f1=0.8859 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=2
+  round 10 t= 49.5s thr=0.752: acc=0.8622 f1=0.8601 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0
+  round 15 t= 73.8s thr=0.702: acc=0.8144 f1=0.8016 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0
+  round 20 t= 98.0s thr=0.768: acc=0.8074 f1=0.7903 acc_hon=24 acc_mal=0 rej_hon=1 rej_mal=25 unknown=0
+  FINAL  acc=0.8074 P=0.8674 R=0.7258 F1=0.7903  beta=0.03 gamma=0.11
+
+==============================================================
+Krum+Bucket
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.5019 f1=0.0076 f=6 buckets=25 bkt_dirty=20 pick_mal=1
+  round  5 t= 25.2s thr=0.756: acc=0.7270 f1=0.7517 f=6 buckets=25 bkt_dirty=19 pick_mal=1
+  round 10 t= 49.5s thr=0.752: acc=0.5721 f1=0.6550 f=6 buckets=25 bkt_dirty=19 pick_mal=1
+  round 15 t= 73.8s thr=0.702: acc=0.4343 f1=0.3758 f=6 buckets=25 bkt_dirty=20 pick_mal=1
+  round 20 t= 98.0s thr=0.768: acc=0.5925 f1=0.6101 f=6 buckets=25 bkt_dirty=21 pick_mal=1
+  FINAL  acc=0.5925 P=0.5848 R=0.6378 F1=0.6101
+
+==============================================================
+Median+Bucket
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.6920 f1=0.6230 f=6 buckets=25 bkt_dirty=20
+  round  5 t= 25.2s thr=0.756: acc=0.6556 f1=0.6774 f=6 buckets=25 bkt_dirty=19
+  round 10 t= 49.5s thr=0.752: acc=0.5402 f1=0.5920 f=6 buckets=25 bkt_dirty=19
+  round 15 t= 73.8s thr=0.702: acc=0.4222 f1=0.5060 f=6 buckets=25 bkt_dirty=20
+  round 20 t= 98.0s thr=0.768: acc=0.3776 f1=0.4197 f=6 buckets=25 bkt_dirty=21
+  FINAL  acc=0.3776 P=0.3931 R=0.4503 F1=0.4197
+
+==============================================================
+Trust-FLAD+Krum+Bucket
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.8438 f1=0.8466 acc_hon=23 acc_mal=8 rej_hon=2 rej_mal=17 unknown=19 buckets=16 bkt_dirty=8 pick_mal=0
+  round  5 t= 25.2s thr=0.756: acc=0.8922 f1=0.8997 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=2 buckets=12 bkt_dirty=0 pick_mal=0
+  round 10 t= 49.5s thr=0.752: acc=0.8967 f1=0.9033 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0 buckets=12 bkt_dirty=0 pick_mal=0
+  round 15 t= 73.8s thr=0.702: acc=0.8087 f1=0.8000 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0 buckets=12 bkt_dirty=0 pick_mal=0
+  round 20 t= 98.0s thr=0.768: acc=0.7844 f1=0.7704 acc_hon=24 acc_mal=0 rej_hon=1 rej_mal=25 unknown=0 buckets=12 bkt_dirty=0 pick_mal=0
+  FINAL  acc=0.7844 P=0.8241 R=0.7232 F1=0.7704  beta=0.03 gamma=0.11
+
+==============================================================
+Trust-FLAD+Median+Bucket
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.8265 f1=0.8274 acc_hon=23 acc_mal=8 rej_hon=2 rej_mal=17 unknown=19 buckets=16 bkt_dirty=8
+  round  5 t= 25.2s thr=0.756: acc=0.8552 f1=0.8582 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=2 buckets=12 bkt_dirty=0
+  round 10 t= 49.5s thr=0.752: acc=0.8335 f1=0.8233 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0 buckets=12 bkt_dirty=0
+  round 15 t= 73.8s thr=0.702: acc=0.8431 f1=0.8379 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0 buckets=12 bkt_dirty=0
+  round 20 t= 98.0s thr=0.768: acc=0.8233 f1=0.8107 acc_hon=24 acc_mal=0 rej_hon=1 rej_mal=25 unknown=0 buckets=12 bkt_dirty=0
+  FINAL  acc=0.8233 P=0.8733 R=0.7564 F1=0.8107  beta=0.03 gamma=0.11
+
+  /Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.5_d0.5_s3_features.csv  [v3 schema]
+  4900 rows | 50 vehicles | 25 malicious (50%)
+  fold 3/3 | split: 34 train / 16 test subject vehicles (disjoint) | 1568 test rows
+  clients: observed | rows/client min 213 median 865 max 1130 | empty 0 | positive share 0.19-0.74
+
+==============================================================
+FedAvg
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.5191 f1=0.6503 
+  round  5 t= 25.2s thr=0.756: acc=0.3967 f1=0.5521 
+  round 10 t= 49.5s thr=0.752: acc=0.3195 f1=0.4327 
+  round 15 t= 73.8s thr=0.702: acc=0.4075 f1=0.4614 
+  round 20 t= 98.0s thr=0.768: acc=0.3425 f1=0.4294 
+  FINAL  acc=0.3425 P=0.3793 R=0.4949 F1=0.4294
+
+==============================================================
+Krum
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.2545 f1=0.3602 f=12 pick_mal=1
+  round  5 t= 25.2s thr=0.756: acc=0.1397 f1=0.1956 f=12 pick_mal=1
+  round 10 t= 49.5s thr=0.752: acc=0.1020 f1=0.1156 f=12 pick_mal=1
+  round 15 t= 73.8s thr=0.702: acc=0.0957 f1=0.0572 f=12 pick_mal=1
+  round 20 t= 98.0s thr=0.768: acc=0.0663 f1=0.0506 f=12 pick_mal=1
+  FINAL  acc=0.0663 P=0.0515 R=0.0497 F1=0.0506
+
+==============================================================
+TrimmedMean
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.4943 f1=0.6111 f=12
+  round  5 t= 25.2s thr=0.756: acc=0.3418 f1=0.4608 f=12
+  round 10 t= 49.5s thr=0.752: acc=0.3865 f1=0.3491 f=12
+  round 15 t= 73.8s thr=0.702: acc=0.5236 f1=0.4543 f=12
+  round 20 t= 98.0s thr=0.768: acc=0.4407 f1=0.4038 f=12
+  FINAL  acc=0.4407 P=0.4323 R=0.3788 F1=0.4038
+
+==============================================================
+Median
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.5415 f1=0.6173 f=12
+  round  5 t= 25.2s thr=0.756: acc=0.4547 f1=0.5934 f=12
+  round 10 t= 49.5s thr=0.752: acc=0.5434 f1=0.3561 f=12
+  round 15 t= 73.8s thr=0.702: acc=0.4190 f1=0.5819 f=12
+  round 20 t= 98.0s thr=0.768: acc=0.5740 f1=0.4036 f=12
+  FINAL  acc=0.5740 P=0.6726 R=0.2883 F1=0.4036
+
+==============================================================
+Trust-FLAD
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.9349 f1=0.9381 acc_hon=23 acc_mal=8 rej_hon=2 rej_mal=17 unknown=19
+  round  5 t= 25.2s thr=0.756: acc=0.9407 f1=0.9403 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=2
+  round 10 t= 49.5s thr=0.752: acc=0.9401 f1=0.9397 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0
+  round 15 t= 73.8s thr=0.702: acc=0.9407 f1=0.9413 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0
+  round 20 t= 98.0s thr=0.768: acc=0.9311 f1=0.9319 acc_hon=24 acc_mal=0 rej_hon=1 rej_mal=25 unknown=0
+  FINAL  acc=0.9311 P=0.9214 R=0.9426 F1=0.9319  beta=0.03 gamma=0.11
+
+==============================================================
+Trust-FLAD+Krum
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.9177 f1=0.9184 acc_hon=23 acc_mal=8 rej_hon=2 rej_mal=17 unknown=19 pick_mal=0
+  round  5 t= 25.2s thr=0.756: acc=0.9330 f1=0.9347 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=2 pick_mal=0
+  round 10 t= 49.5s thr=0.752: acc=0.9432 f1=0.9429 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0 pick_mal=0
+  round 15 t= 73.8s thr=0.702: acc=0.9426 f1=0.9419 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0 pick_mal=0
+  round 20 t= 98.0s thr=0.768: acc=0.9375 f1=0.9365 acc_hon=24 acc_mal=0 rej_hon=1 rej_mal=25 unknown=0 pick_mal=0
+  FINAL  acc=0.9375 P=0.9513 R=0.9222 F1=0.9365  beta=0.03 gamma=0.11
+
+==============================================================
+Trust-FLAD+Median
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.9432 f1=0.9462 acc_hon=23 acc_mal=8 rej_hon=2 rej_mal=17 unknown=19
+  round  5 t= 25.2s thr=0.756: acc=0.9324 f1=0.9314 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=2
+  round 10 t= 49.5s thr=0.752: acc=0.9152 f1=0.9126 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0
+  round 15 t= 73.8s thr=0.702: acc=0.9247 f1=0.9249 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0
+  round 20 t= 98.0s thr=0.768: acc=0.9133 f1=0.9132 acc_hon=24 acc_mal=0 rej_hon=1 rej_mal=25 unknown=0
+  FINAL  acc=0.9133 P=0.9143 R=0.9120 F1=0.9132  beta=0.03 gamma=0.11
+
+==============================================================
+Krum+Bucket
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.3833 f1=0.5542 f=6 buckets=25 bkt_dirty=20 pick_mal=1
+  round  5 t= 25.2s thr=0.756: acc=0.4585 f1=0.5333 f=6 buckets=25 bkt_dirty=19 pick_mal=1
+  round 10 t= 49.5s thr=0.752: acc=0.8776 f1=0.8797 f=6 buckets=25 bkt_dirty=19 pick_mal=1
+  round 15 t= 73.8s thr=0.702: acc=0.0440 f1=0.0079 f=6 buckets=25 bkt_dirty=20 pick_mal=1
+  round 20 t= 98.0s thr=0.768: acc=0.9190 f1=0.9197 f=6 buckets=25 bkt_dirty=21 pick_mal=1
+  FINAL  acc=0.9190 P=0.9122 R=0.9273 F1=0.9197
+
+==============================================================
+Median+Bucket
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.4694 f1=0.6197 f=6 buckets=25 bkt_dirty=20
+  round  5 t= 25.2s thr=0.756: acc=0.3125 f1=0.4511 f=6 buckets=25 bkt_dirty=19
+  round 10 t= 49.5s thr=0.752: acc=0.2717 f1=0.3860 f=6 buckets=25 bkt_dirty=19
+  round 15 t= 73.8s thr=0.702: acc=0.2073 f1=0.1719 f=6 buckets=25 bkt_dirty=20
+  round 20 t= 98.0s thr=0.768: acc=0.6339 f1=0.5605 f=6 buckets=25 bkt_dirty=21
+  FINAL  acc=0.6339 P=0.7011 R=0.4668 F1=0.5605
+
+==============================================================
+Trust-FLAD+Krum+Bucket
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.9388 f1=0.9415 acc_hon=23 acc_mal=8 rej_hon=2 rej_mal=17 unknown=19 buckets=16 bkt_dirty=8 pick_mal=0
+  round  5 t= 25.2s thr=0.756: acc=0.9394 f1=0.9387 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=2 buckets=12 bkt_dirty=0 pick_mal=0
+  round 10 t= 49.5s thr=0.752: acc=0.9407 f1=0.9410 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0 buckets=12 bkt_dirty=0 pick_mal=0
+  round 15 t= 73.8s thr=0.702: acc=0.9426 f1=0.9422 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0 buckets=12 bkt_dirty=0 pick_mal=0
+  round 20 t= 98.0s thr=0.768: acc=0.9337 f1=0.9350 acc_hon=24 acc_mal=0 rej_hon=1 rej_mal=25 unknown=0 buckets=12 bkt_dirty=0 pick_mal=0
+  FINAL  acc=0.9337 P=0.9167 R=0.9541 F1=0.9350  beta=0.03 gamma=0.11
+
+==============================================================
+Trust-FLAD+Median+Bucket
+==============================================================
+  round  1 t=  5.8s thr=0.822: acc=0.9375 f1=0.9410 acc_hon=23 acc_mal=8 rej_hon=2 rej_mal=17 unknown=19 buckets=16 bkt_dirty=8
+  round  5 t= 25.2s thr=0.756: acc=0.9407 f1=0.9403 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=2 buckets=12 bkt_dirty=0
+  round 10 t= 49.5s thr=0.752: acc=0.9247 f1=0.9231 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0 buckets=12 bkt_dirty=0
+  round 15 t= 73.8s thr=0.702: acc=0.9305 f1=0.9311 acc_hon=23 acc_mal=0 rej_hon=2 rej_mal=25 unknown=0 buckets=12 bkt_dirty=0
+  round 20 t= 98.0s thr=0.768: acc=0.9088 f1=0.9085 acc_hon=24 acc_mal=0 rej_hon=1 rej_mal=25 unknown=0 buckets=12 bkt_dirty=0
+  FINAL  acc=0.9088 P=0.9114 R=0.9056 F1=0.9085  beta=0.03 gamma=0.11
+
+=================================================================================
+Method                         Acc    Prec     Rec      F1    beta   gamma   kept
+---------------------------------------------------------------------------------
+FedAvg                      0.3437  0.3611  0.4065  0.3825                       
+Krum                        0.3167  0.3099  0.2988  0.3042                       
+TrimmedMean                 0.4331  0.4477  0.5731  0.5027                       
+Median                      0.5404  0.5405  0.5392  0.5398                       
+Trust-FLAD                  0.8673  0.8728  0.8600  0.8664    0.03    0.11   22.9
+Trust-FLAD+Krum             0.8741  0.8556  0.9000  0.8773    0.03    0.11   22.9
+Trust-FLAD+Median           0.8647  0.8691  0.8588  0.8639    0.03    0.11   22.9
+Krum+Bucket                 0.6469  0.6568  0.6155  0.6355                       
+Median+Bucket               0.4010  0.3974  0.3833  0.3902                       
+Trust-FLAD+Krum+Bucket      0.8484  0.8684  0.8212  0.8441    0.03    0.11   22.9
+Trust-FLAD+Median+Bucket    0.8692  0.8780  0.8576  0.8676    0.03    0.11   22.9
+=================================================================================
+beta = attacker pass rate, gamma = honest rejection rate, kept = clients aggregated/round
+wrote /Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/results_labelflip/m0.5_d0.5_s3_features_label_flip_gmm_window_observed_*.csv and _summary.json

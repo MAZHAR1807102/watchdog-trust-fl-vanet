@@ -1,0 +1,95 @@
+{
+  "config": {
+    "rounds_plain": 20,
+    "local_epochs": 3,
+    "batch_size": 128,
+    "lr": 0.01,
+    "trust_threshold": "gmm",
+    "test_vehicle_ratio": 0.2,
+    "seed": 5,
+    "krum_f": null,
+    "attack": "none",
+    "attack_scale": 5.0,
+    "attack_sigma": 1.0,
+    "alie_z": 1.0,
+    "uniform_after_filter": false,
+    "bucket_size": 2,
+    "trust_mode": "window",
+    "trust_window": 10.0,
+    "min_obs": 5,
+    "cold_start": "accept",
+    "clients": "observed",
+    "poison_set": "label",
+    "poison_frac": 0.3
+  },
+  "csv": "/Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.2_d0.2_s5_features.csv",
+  "folds": 3,
+  "results": {
+    "FedAvg": {
+      "accuracy": 0.8226530612244898,
+      "precision": 0.5948717948717949,
+      "recall": 0.3551020408163265,
+      "f1": 0.4447284345047923,
+      "cm": [
+        [
+          3683,
+          237
+        ],
+        [
+          632,
+          348
+        ]
+      ],
+      "f1_folds": [
+        0.27726432532347506,
+        0.5230125523012552,
+        0.5421245421245421
+      ]
+    },
+    "Median": {
+      "accuracy": 0.8144897959183673,
+      "precision": 0.5596638655462185,
+      "recall": 0.33979591836734696,
+      "f1": 0.4228571428571429,
+      "cm": [
+        [
+          3658,
+          262
+        ],
+        [
+          647,
+          333
+        ]
+      ],
+      "f1_folds": [
+        0.06597938144329897,
+        0.5637065637065637,
+        0.5979020979020979
+      ]
+    },
+    "Trust-FLAD+Median": {
+      "accuracy": 0.8259183673469388,
+      "precision": 0.6,
+      "recall": 0.38877551020408163,
+      "f1": 0.4718266253869969,
+      "cm": [
+        [
+          3666,
+          254
+        ],
+        [
+          599,
+          381
+        ]
+      ],
+      "beta": 0.335,
+      "gamma": 0.11999999999999995,
+      "accepted_mean": 38.55,
+      "f1_folds": [
+        0.24334600760456274,
+        0.5433070866141733,
+        0.6161790017211703
+      ]
+    }
+  }
+}

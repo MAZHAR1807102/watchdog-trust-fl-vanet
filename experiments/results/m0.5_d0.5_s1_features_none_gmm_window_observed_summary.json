@@ -1,0 +1,93 @@
+{
+  "config": {
+    "rounds_plain": 20,
+    "local_epochs": 3,
+    "batch_size": 128,
+    "lr": 0.01,
+    "trust_threshold": "gmm",
+    "test_vehicle_ratio": 0.2,
+    "seed": 1,
+    "krum_f": null,
+    "attack": "none",
+    "attack_scale": 5.0,
+    "attack_sigma": 1.0,
+    "alie_z": 1.0,
+    "uniform_after_filter": false,
+    "bucket_size": 2,
+    "trust_mode": "window",
+    "trust_window": 10.0,
+    "min_obs": 5,
+    "cold_start": "accept",
+    "clients": "observed"
+  },
+  "csv": "/Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.5_d0.5_s1_features.csv",
+  "folds": 3,
+  "results": {
+    "FedAvg": {
+      "accuracy": 0.9246938775510204,
+      "precision": 0.9525880817746847,
+      "recall": 0.8938775510204081,
+      "f1": 0.9222994314592545,
+      "cm": [
+        [
+          2341,
+          109
+        ],
+        [
+          260,
+          2190
+        ]
+      ],
+      "f1_folds": [
+        0.8975791433891993,
+        0.9659601798330122,
+        0.9044908285895004
+      ]
+    },
+    "Median": {
+      "accuracy": 0.9030612244897959,
+      "precision": 0.9336846728151076,
+      "recall": 0.8677551020408163,
+      "f1": 0.8995134334673154,
+      "cm": [
+        [
+          2299,
+          151
+        ],
+        [
+          324,
+          2126
+        ]
+      ],
+      "f1_folds": [
+        0.8780795957043588,
+        0.9414858645627876,
+        0.8810844115834874
+      ]
+    },
+    "Trust-FLAD+Median": {
+      "accuracy": 0.9153061224489796,
+      "precision": 0.9342723004694836,
+      "recall": 0.8934693877551021,
+      "f1": 0.9134153974546213,
+      "cm": [
+        [
+          2296,
+          154
+        ],
+        [
+          261,
+          2189
+        ]
+      ],
+      "beta": 0.08600000000000001,
+      "gamma": 0.084,
+      "accepted_mean": 25.05,
+      "f1_folds": [
+        0.9045893719806763,
+        0.9451697127937336,
+        0.8922118380062305
+      ]
+    }
+  }
+}

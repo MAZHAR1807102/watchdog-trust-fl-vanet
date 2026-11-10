@@ -1,0 +1,93 @@
+{
+  "config": {
+    "rounds_plain": 20,
+    "local_epochs": 3,
+    "batch_size": 128,
+    "lr": 0.01,
+    "trust_threshold": "gmm",
+    "test_vehicle_ratio": 0.2,
+    "seed": 2,
+    "krum_f": null,
+    "attack": "none",
+    "attack_scale": 5.0,
+    "attack_sigma": 1.0,
+    "alie_z": 1.0,
+    "uniform_after_filter": false,
+    "bucket_size": 2,
+    "trust_mode": "window",
+    "trust_window": 10.0,
+    "min_obs": 5,
+    "cold_start": "accept",
+    "clients": "observed"
+  },
+  "csv": "/Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.4_d0.5_s2_features.csv",
+  "folds": 3,
+  "results": {
+    "FedAvg": {
+      "accuracy": 0.9744897959183674,
+      "precision": 0.9924852388620504,
+      "recall": 0.9433673469387756,
+      "f1": 0.9673031650536228,
+      "cm": [
+        [
+          2926,
+          14
+        ],
+        [
+          111,
+          1849
+        ]
+      ],
+      "f1_folds": [
+        0.9732142857142857,
+        0.9547511312217195,
+        0.9748482220294883
+      ]
+    },
+    "Median": {
+      "accuracy": 0.9753061224489796,
+      "precision": 0.9862506610259122,
+      "recall": 0.951530612244898,
+      "f1": 0.9685795897169567,
+      "cm": [
+        [
+          2914,
+          26
+        ],
+        [
+          95,
+          1865
+        ]
+      ],
+      "f1_folds": [
+        0.9732540861812778,
+        0.9616252821670429,
+        0.9710884353741497
+      ]
+    },
+    "Trust-FLAD+Median": {
+      "accuracy": 0.976530612244898,
+      "precision": 0.9941081949651848,
+      "recall": 0.9469387755102041,
+      "f1": 0.9699503527567285,
+      "cm": [
+        [
+          2929,
+          11
+        ],
+        [
+          104,
+          1856
+        ]
+      ],
+      "beta": 0.03,
+      "gamma": 0.07333333333333335,
+      "accepted_mean": 28.399999999999995,
+      "f1_folds": [
+        0.9716417910447761,
+        0.9623493975903614,
+        0.9767040552200172
+      ]
+    }
+  }
+}

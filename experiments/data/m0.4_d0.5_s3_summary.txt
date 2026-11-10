@@ -1,0 +1,17 @@
+Nodes: 50
+Malicious ratio: 40%
+Malicious count: 20
+Drop rate: 0.5
+Duration: 100s
+Seed: 3
+Placement: random
+Mobility: ring
+Propagation: range
+Watchdog timeout: 1s
+App PDR: 0.5776 (20414/35342)
+Packets dropped by attackers (ground truth): 11771
+Watchdog relay requests: 54958
+Watchdog false accusations (forwarded, not overheard): 876
+Mean watchdog forward_ratio honest: 0.9402 malicious: 0.4736
+Mean truly-not-forwarded rate honest: 0.0401 malicious: 0.5158
+Attacker IDs: 7 8 9 10 12 14 15 17 21 24 25 27 29 31 33 41 43 45 46 47

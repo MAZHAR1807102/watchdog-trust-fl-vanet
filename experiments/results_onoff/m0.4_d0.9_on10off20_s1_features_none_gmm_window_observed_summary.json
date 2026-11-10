@@ -1,0 +1,95 @@
+{
+  "config": {
+    "rounds_plain": 20,
+    "local_epochs": 3,
+    "batch_size": 128,
+    "lr": 0.01,
+    "trust_threshold": "gmm",
+    "test_vehicle_ratio": 0.2,
+    "seed": 1,
+    "krum_f": null,
+    "attack": "none",
+    "attack_scale": 5.0,
+    "attack_sigma": 1.0,
+    "alie_z": 1.0,
+    "uniform_after_filter": false,
+    "bucket_size": 2,
+    "trust_mode": "window",
+    "trust_window": 10.0,
+    "min_obs": 5,
+    "cold_start": "accept",
+    "clients": "observed",
+    "poison_set": "label",
+    "poison_frac": 0.3
+  },
+  "csv": "/Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.4_d0.9_on10off20_s1_features.csv",
+  "folds": 3,
+  "results": {
+    "FedAvg": {
+      "accuracy": 0.8189795918367347,
+      "precision": 0.8428115015974441,
+      "recall": 0.6729591836734694,
+      "f1": 0.7483687943262411,
+      "cm": [
+        [
+          2694,
+          246
+        ],
+        [
+          641,
+          1319
+        ]
+      ],
+      "f1_folds": [
+        0.781055900621118,
+        0.6935866983372921,
+        0.7761806981519507
+      ]
+    },
+    "Median": {
+      "accuracy": 0.8226530612244898,
+      "precision": 0.8264512268102933,
+      "recall": 0.7045918367346938,
+      "f1": 0.7606719911870008,
+      "cm": [
+        [
+          2650,
+          290
+        ],
+        [
+          579,
+          1381
+        ]
+      ],
+      "f1_folds": [
+        0.8006042296072508,
+        0.6899166034874905,
+        0.8016194331983806
+      ]
+    },
+    "Trust-FLAD+Median": {
+      "accuracy": 0.8193877551020409,
+      "precision": 0.835308796007486,
+      "recall": 0.6831632653061225,
+      "f1": 0.7516138085882683,
+      "cm": [
+        [
+          2676,
+          264
+        ],
+        [
+          621,
+          1339
+        ]
+      ],
+      "beta": 0.5425000000000001,
+      "gamma": 0.07,
+      "accepted_mean": 38.75,
+      "f1_folds": [
+        0.7932875667429443,
+        0.6861198738170347,
+        0.7804878048780488
+      ]
+    }
+  }
+}

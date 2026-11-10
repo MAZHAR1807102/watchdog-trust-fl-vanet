@@ -1,0 +1,11 @@
+.DS_Store
+__pycache__/
+*.pyc
+# LaTeX build files (main.pdf is kept)
+paper/*.aux
+paper/*.log
+paper/*.bbl
+paper/*.blg
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.out

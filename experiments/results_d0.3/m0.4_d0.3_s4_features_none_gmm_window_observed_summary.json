@@ -1,0 +1,95 @@
+{
+  "config": {
+    "rounds_plain": 20,
+    "local_epochs": 3,
+    "batch_size": 128,
+    "lr": 0.01,
+    "trust_threshold": "gmm",
+    "test_vehicle_ratio": 0.2,
+    "seed": 4,
+    "krum_f": null,
+    "attack": "none",
+    "attack_scale": 5.0,
+    "attack_sigma": 1.0,
+    "alie_z": 1.0,
+    "uniform_after_filter": false,
+    "bucket_size": 2,
+    "trust_mode": "window",
+    "trust_window": 10.0,
+    "min_obs": 5,
+    "cold_start": "accept",
+    "clients": "observed",
+    "poison_set": "label",
+    "poison_frac": 0.3
+  },
+  "csv": "/Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.4_d0.3_s4_features.csv",
+  "folds": 3,
+  "results": {
+    "FedAvg": {
+      "accuracy": 0.9108163265306123,
+      "precision": 0.9026969857218403,
+      "recall": 0.8709183673469387,
+      "f1": 0.8865229810438847,
+      "cm": [
+        [
+          2756,
+          184
+        ],
+        [
+          253,
+          1707
+        ]
+      ],
+      "f1_folds": [
+        0.8569144684252598,
+        0.9018450184501845,
+        0.8995983935742972
+      ]
+    },
+    "Median": {
+      "accuracy": 0.9157142857142857,
+      "precision": 0.9030745179781136,
+      "recall": 0.8841836734693878,
+      "f1": 0.8935292601185872,
+      "cm": [
+        [
+          2754,
+          186
+        ],
+        [
+          227,
+          1733
+        ]
+      ],
+      "f1_folds": [
+        0.8675078864353313,
+        0.9137426900584795,
+        0.8978278358809332
+      ]
+    },
+    "Trust-FLAD+Median": {
+      "accuracy": 0.9144897959183673,
+      "precision": 0.9070258848388801,
+      "recall": 0.8760204081632653,
+      "f1": 0.8912535686478069,
+      "cm": [
+        [
+          2764,
+          176
+        ],
+        [
+          243,
+          1717
+        ]
+      ],
+      "beta": 0.11499999999999995,
+      "gamma": 0.16166666666666668,
+      "accepted_mean": 27.45,
+      "f1_folds": [
+        0.8674121405750799,
+        0.9065489330389993,
+        0.8985507246376812
+      ]
+    }
+  }
+}

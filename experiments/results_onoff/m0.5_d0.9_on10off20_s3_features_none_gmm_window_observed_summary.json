@@ -1,0 +1,95 @@
+{
+  "config": {
+    "rounds_plain": 20,
+    "local_epochs": 3,
+    "batch_size": 128,
+    "lr": 0.01,
+    "trust_threshold": "gmm",
+    "test_vehicle_ratio": 0.2,
+    "seed": 3,
+    "krum_f": null,
+    "attack": "none",
+    "attack_scale": 5.0,
+    "attack_sigma": 1.0,
+    "alie_z": 1.0,
+    "uniform_after_filter": false,
+    "bucket_size": 2,
+    "trust_mode": "window",
+    "trust_window": 10.0,
+    "min_obs": 5,
+    "cold_start": "accept",
+    "clients": "observed",
+    "poison_set": "label",
+    "poison_frac": 0.3
+  },
+  "csv": "/Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.5_d0.9_on10off20_s3_features.csv",
+  "folds": 3,
+  "results": {
+    "FedAvg": {
+      "accuracy": 0.7526530612244898,
+      "precision": 0.7380769230769231,
+      "recall": 0.7832653061224489,
+      "f1": 0.76,
+      "cm": [
+        [
+          1769,
+          681
+        ],
+        [
+          531,
+          1919
+        ]
+      ],
+      "f1_folds": [
+        0.8781014023732471,
+        0.7155635062611807,
+        0.6649111257406188
+      ]
+    },
+    "Median": {
+      "accuracy": 0.7481632653061224,
+      "precision": 0.7424242424242424,
+      "recall": 0.76,
+      "f1": 0.7511093182734974,
+      "cm": [
+        [
+          1804,
+          646
+        ],
+        [
+          588,
+          1862
+        ]
+      ],
+      "f1_folds": [
+        0.8776978417266187,
+        0.6959171237050579,
+        0.6596026490066225
+      ]
+    },
+    "Trust-FLAD+Median": {
+      "accuracy": 0.7524489795918368,
+      "precision": 0.7461201750895344,
+      "recall": 0.7653061224489796,
+      "f1": 0.7555913761837598,
+      "cm": [
+        [
+          1812,
+          638
+        ],
+        [
+          575,
+          1875
+        ]
+      ],
+      "beta": 0.49800000000000005,
+      "gamma": 0.05400000000000001,
+      "accepted_mean": 36.1,
+      "f1_folds": [
+        0.8706800445930881,
+        0.7129071170084439,
+        0.6657842488418266
+      ]
+    }
+  }
+}

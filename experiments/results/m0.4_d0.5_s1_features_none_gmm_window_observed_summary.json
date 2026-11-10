@@ -1,0 +1,93 @@
+{
+  "config": {
+    "rounds_plain": 20,
+    "local_epochs": 3,
+    "batch_size": 128,
+    "lr": 0.01,
+    "trust_threshold": "gmm",
+    "test_vehicle_ratio": 0.2,
+    "seed": 1,
+    "krum_f": null,
+    "attack": "none",
+    "attack_scale": 5.0,
+    "attack_sigma": 1.0,
+    "alie_z": 1.0,
+    "uniform_after_filter": false,
+    "bucket_size": 2,
+    "trust_mode": "window",
+    "trust_window": 10.0,
+    "min_obs": 5,
+    "cold_start": "accept",
+    "clients": "observed"
+  },
+  "csv": "/Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.4_d0.5_s1_features.csv",
+  "folds": 3,
+  "results": {
+    "FedAvg": {
+      "accuracy": 0.9191836734693878,
+      "precision": 0.9081419624217119,
+      "recall": 0.8877551020408163,
+      "f1": 0.8978328173374613,
+      "cm": [
+        [
+          2764,
+          176
+        ],
+        [
+          220,
+          1740
+        ]
+      ],
+      "f1_folds": [
+        0.8597097442985487,
+        0.921092564491654,
+        0.9198919891989199
+      ]
+    },
+    "Median": {
+      "accuracy": 0.9220408163265306,
+      "precision": 0.9135220125786163,
+      "recall": 0.8892857142857142,
+      "f1": 0.9012409513960703,
+      "cm": [
+        [
+          2775,
+          165
+        ],
+        [
+          217,
+          1743
+        ]
+      ],
+      "f1_folds": [
+        0.8624113475177305,
+        0.9221556886227545,
+        0.9251336898395722
+      ]
+    },
+    "Trust-FLAD+Median": {
+      "accuracy": 0.923265306122449,
+      "precision": 0.9099378881987578,
+      "recall": 0.8969387755102041,
+      "f1": 0.9033915724563206,
+      "cm": [
+        [
+          2766,
+          174
+        ],
+        [
+          202,
+          1758
+        ]
+      ],
+      "beta": 0.045000000000000005,
+      "gamma": 0.10833333333333335,
+      "accepted_mean": 27.649999999999995,
+      "f1_folds": [
+        0.8641801548205489,
+        0.9179834462001505,
+        0.9352014010507881
+      ]
+    }
+  }
+}

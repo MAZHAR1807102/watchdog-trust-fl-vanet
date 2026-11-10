@@ -1,0 +1,95 @@
+{
+  "config": {
+    "rounds_plain": 20,
+    "local_epochs": 3,
+    "batch_size": 128,
+    "lr": 0.01,
+    "trust_threshold": "gmm",
+    "test_vehicle_ratio": 0.2,
+    "seed": 5,
+    "krum_f": null,
+    "attack": "none",
+    "attack_scale": 5.0,
+    "attack_sigma": 1.0,
+    "alie_z": 1.0,
+    "uniform_after_filter": false,
+    "bucket_size": 2,
+    "trust_mode": "window",
+    "trust_window": 10.0,
+    "min_obs": 5,
+    "cold_start": "accept",
+    "clients": "observed",
+    "poison_set": "label",
+    "poison_frac": 0.3
+  },
+  "csv": "/Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.5_d0.2_s5_features.csv",
+  "folds": 3,
+  "results": {
+    "FedAvg": {
+      "accuracy": 0.8781632653061224,
+      "precision": 0.9002159827213823,
+      "recall": 0.8506122448979592,
+      "f1": 0.8747114375655823,
+      "cm": [
+        [
+          2219,
+          231
+        ],
+        [
+          366,
+          2084
+        ]
+      ],
+      "f1_folds": [
+        0.8903878583473862,
+        0.816655473472129,
+        0.9138276553106213
+      ]
+    },
+    "Median": {
+      "accuracy": 0.8948979591836734,
+      "precision": 0.896029471960704,
+      "recall": 0.8934693877551021,
+      "f1": 0.8947475986102595,
+      "cm": [
+        [
+          2196,
+          254
+        ],
+        [
+          261,
+          2189
+        ]
+      ],
+      "f1_folds": [
+        0.8961257720381808,
+        0.8793103448275862,
+        0.9099462365591398
+      ]
+    },
+    "Trust-FLAD+Median": {
+      "accuracy": 0.88,
+      "precision": 0.893824027072758,
+      "recall": 0.8624489795918368,
+      "f1": 0.8778562525965933,
+      "cm": [
+        [
+          2199,
+          251
+        ],
+        [
+          337,
+          2113
+        ]
+      ],
+      "beta": 0.6659999999999999,
+      "gamma": 0.06,
+      "accepted_mean": 40.15,
+      "f1_folds": [
+        0.8875140607424072,
+        0.8554838709677419,
+        0.8896366083445492
+      ]
+    }
+  }
+}

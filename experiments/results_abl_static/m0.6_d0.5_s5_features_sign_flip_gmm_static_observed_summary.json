@@ -1,0 +1,106 @@
+{
+  "config": {
+    "rounds_plain": 20,
+    "local_epochs": 3,
+    "batch_size": 128,
+    "lr": 0.01,
+    "trust_threshold": "gmm",
+    "test_vehicle_ratio": 0.2,
+    "seed": 5,
+    "krum_f": null,
+    "attack": "sign_flip",
+    "attack_scale": 5.0,
+    "attack_sigma": 1.0,
+    "alie_z": 1.0,
+    "uniform_after_filter": false,
+    "bucket_size": 2,
+    "trust_mode": "static",
+    "trust_window": 10.0,
+    "min_obs": 5,
+    "cold_start": "accept",
+    "clients": "observed",
+    "poison_set": "label",
+    "poison_frac": 0.3,
+    "uploads": "auto",
+    "trust_memory": 0.0,
+    "trust_norm": "none",
+    "norm_radius": 300.0
+  },
+  "csv": "/Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.6_d0.5_s5_features.csv",
+  "folds": 3,
+  "results": {
+    "Trust-FLAD": {
+      "accuracy": 0.9308163265306122,
+      "precision": 0.9245837414299706,
+      "recall": 0.963265306122449,
+      "f1": 0.9435282358820589,
+      "cm": [
+        [
+          1729,
+          231
+        ],
+        [
+          108,
+          2832
+        ]
+      ],
+      "beta": 0.0,
+      "gamma": 0.0,
+      "accepted_mean": 20.0,
+      "f1_folds": [
+        0.9447287615148413,
+        0.9218455743879472,
+        0.9662337662337662
+      ]
+    },
+    "Trust-FLAD+Krum": {
+      "accuracy": 0.8834693877551021,
+      "precision": 0.9111419645956265,
+      "recall": 0.8928571428571429,
+      "f1": 0.9019068888507129,
+      "cm": [
+        [
+          1704,
+          256
+        ],
+        [
+          315,
+          2625
+        ]
+      ],
+      "beta": 0.0,
+      "gamma": 0.0,
+      "accepted_mean": 20.0,
+      "pick_mal_rate": 0.0,
+      "f1_folds": [
+        0.8878048780487805,
+        0.9107142857142857,
+        0.9058441558441559
+      ]
+    },
+    "Trust-FLAD+Median": {
+      "accuracy": 0.9342857142857143,
+      "precision": 0.9266623207301173,
+      "recall": 0.9670068027210884,
+      "f1": 0.9464047936085219,
+      "cm": [
+        [
+          1735,
+          225
+        ],
+        [
+          97,
+          2843
+        ]
+      ],
+      "beta": 0.0,
+      "gamma": 0.0,
+      "accepted_mean": 20.0,
+      "f1_folds": [
+        0.9531090723751274,
+        0.9222797927461139,
+        0.9661986479459178
+      ]
+    }
+  }
+}

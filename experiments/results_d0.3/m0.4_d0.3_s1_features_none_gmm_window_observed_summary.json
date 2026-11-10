@@ -1,0 +1,95 @@
+{
+  "config": {
+    "rounds_plain": 20,
+    "local_epochs": 3,
+    "batch_size": 128,
+    "lr": 0.01,
+    "trust_threshold": "gmm",
+    "test_vehicle_ratio": 0.2,
+    "seed": 1,
+    "krum_f": null,
+    "attack": "none",
+    "attack_scale": 5.0,
+    "attack_sigma": 1.0,
+    "alie_z": 1.0,
+    "uniform_after_filter": false,
+    "bucket_size": 2,
+    "trust_mode": "window",
+    "trust_window": 10.0,
+    "min_obs": 5,
+    "cold_start": "accept",
+    "clients": "observed",
+    "poison_set": "label",
+    "poison_frac": 0.3
+  },
+  "csv": "/Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.4_d0.3_s1_features.csv",
+  "folds": 3,
+  "results": {
+    "FedAvg": {
+      "accuracy": 0.8561224489795919,
+      "precision": 0.8412180532898315,
+      "recall": 0.7892857142857143,
+      "f1": 0.8144248486443801,
+      "cm": [
+        [
+          2648,
+          292
+        ],
+        [
+          413,
+          1547
+        ]
+      ],
+      "f1_folds": [
+        0.8673740053050398,
+        0.8768171384850804,
+        0.6504065040650406
+      ]
+    },
+    "Median": {
+      "accuracy": 0.8653061224489796,
+      "precision": 0.8603104212860311,
+      "recall": 0.7918367346938775,
+      "f1": 0.824654622741764,
+      "cm": [
+        [
+          2688,
+          252
+        ],
+        [
+          408,
+          1552
+        ]
+      ],
+      "f1_folds": [
+        0.8674217188540972,
+        0.9128127369219106,
+        0.6334745762711864
+      ]
+    },
+    "Trust-FLAD+Median": {
+      "accuracy": 0.8442857142857143,
+      "precision": 0.8202247191011236,
+      "recall": 0.7821428571428571,
+      "f1": 0.8007312614259597,
+      "cm": [
+        [
+          2604,
+          336
+        ],
+        [
+          427,
+          1533
+        ]
+      ],
+      "beta": 0.39750000000000013,
+      "gamma": 0.05833333333333335,
+      "accepted_mean": 36.2,
+      "f1_folds": [
+        0.8652952886529529,
+        0.853448275862069,
+        0.6172043010752688
+      ]
+    }
+  }
+}

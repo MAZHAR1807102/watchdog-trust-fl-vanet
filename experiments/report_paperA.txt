@@ -1,0 +1,243 @@
+################ results_abl_otsu
+attack=sign_flip  seeds per ratio: {0.2: 0, 0.3: 0, 0.4: 0, 0.5: 0, 0.6: 0, 0.7: 0}
+
+method                               20%           30%           40%           50%           60%           70%
+FedAvg                                --            --            --            --            --            --
+Trust-FLAD                  0.772±0.10    0.862±0.04    0.901±0.03    0.896±0.04    0.965±0.01    0.965±0.01  
+Trust-FLAD+Krum             0.741±0.12    0.836±0.05    0.874±0.05    0.914±0.03    0.952±0.01    0.958±0.02  
+Trust-FLAD+Median           0.775±0.11    0.855±0.04    0.903±0.04    0.914±0.02    0.963±0.01    0.771±0.39  
+
+trust filter                         20%           30%           40%           50%           60%           70%
+beta (attackers passed)       0.04±0.02     0.04±0.01     0.03±0.01     0.04±0.01     0.03±0.01     0.04±0.02 
+gamma (honest rejected)       0.76±0.03     0.75±0.06     0.68±0.01     0.66±0.05     0.63±0.06     0.55±0.06 
+clients kept / round         10.08±1.22     9.44±2.16    10.16±0.37     9.55±1.60     8.41±1.18     8.25±1.48 
+
+Krum / bucket diagnostics                     20%      30%      40%      50%      60%      70%
+Trust-FLAD+Krum poison picked                0.00     0.00     0.00     0.00     0.01     0.00
+
+wrote dataset_fl-training-v3-ring/v3_sign_flip_f1_results_abl_otsu.png
+
+################ results_abl_none
+attack=sign_flip  seeds per ratio: {0.2: 0, 0.3: 0, 0.4: 0, 0.5: 0, 0.6: 0, 0.7: 0}
+
+method                               20%           30%           40%           50%           60%           70%
+FedAvg                                --            --            --            --            --            --
+Trust-FLAD                  0.574±0.12    0.456±0.01    0.352±0.11    0.172±0.12    0.077±0.15    0.293±0.24  
+Trust-FLAD+Krum             0.720±0.09    0.867±0.03    0.838±0.08    0.781±0.07    0.888±0.02    0.689±0.14  
+Trust-FLAD+Median           0.793±0.11    0.856±0.05    0.879±0.06    0.394±0.13    0.005±0.01    0.001±0.00  
+
+trust filter                         20%           30%           40%           50%           60%           70%
+beta (attackers passed)       1.00±0.00     1.00±0.00     1.00±0.00     1.00±0.00     1.00±0.00     1.00±0.00 
+gamma (honest rejected)       0.00±0.00     0.00±0.00     0.00±0.00     0.00±0.00     0.00±0.00     0.00±0.00 
+clients kept / round         50.00±0.00    50.00±0.00    50.00±0.00    50.00±0.00    50.00±0.00    50.00±0.00 
+
+Krum / bucket diagnostics                     20%      30%      40%      50%      60%      70%
+Trust-FLAD+Krum poison picked                0.00     0.00     0.00     0.00     0.00     0.31
+
+wrote dataset_fl-training-v3-ring/v3_sign_flip_f1_results_abl_none.png
+
+################ results_abl_static
+attack=sign_flip  seeds per ratio: {0.2: 0, 0.3: 0, 0.4: 0, 0.5: 0, 0.6: 0, 0.7: 0}
+
+method                               20%           30%           40%           50%           60%           70%
+FedAvg                                --            --            --            --            --            --
+Trust-FLAD                  0.796±0.10    0.860±0.04    0.911±0.04    0.913±0.03    0.963±0.01    0.966±0.02  
+Trust-FLAD+Krum             0.744±0.03    0.845±0.05    0.916±0.03    0.912±0.02    0.950±0.02    0.954±0.02  
+Trust-FLAD+Median           0.791±0.10    0.866±0.04    0.919±0.03    0.912±0.03    0.966±0.01    0.965±0.02  
+
+trust filter                         20%           30%           40%           50%           60%           70%
+beta (attackers passed)       0.00±0.00     0.00±0.00     0.00±0.00     0.00±0.00     0.00±0.00     0.00±0.00 
+gamma (honest rejected)       0.08±0.09     0.05±0.03     0.03±0.02     0.05±0.02     0.00±0.00     0.03±0.03 
+clients kept / round         36.80±3.54    33.40±1.20    29.00±0.63    23.80±0.40    20.00±0.00    14.60±0.49 
+
+Krum / bucket diagnostics                     20%      30%      40%      50%      60%      70%
+Trust-FLAD+Krum poison picked                0.00     0.00     0.00     0.00     0.00     0.00
+
+wrote dataset_fl-training-v3-ring/v3_sign_flip_f1_results_abl_static.png
+
+################ results_abl_W5
+attack=sign_flip  seeds per ratio: {0.2: 0, 0.3: 0, 0.4: 0, 0.5: 0, 0.6: 0, 0.7: 0}
+
+method                               20%           30%           40%           50%           60%           70%
+FedAvg                                --            --            --            --            --            --
+Trust-FLAD                  0.789±0.09    0.863±0.04    0.912±0.03    0.919±0.03    0.965±0.01    0.970±0.01  
+Trust-FLAD+Krum             0.795±0.05    0.830±0.06    0.916±0.03    0.903±0.02    0.957±0.01    0.955±0.02  
+Trust-FLAD+Median           0.793±0.10    0.863±0.04    0.913±0.03    0.911±0.03    0.965±0.01    0.969±0.01  
+
+trust filter                         20%           30%           40%           50%           60%           70%
+beta (attackers passed)       0.06±0.03     0.06±0.02     0.05±0.01     0.06±0.02     0.05±0.02     0.07±0.02 
+gamma (honest rejected)       0.09±0.03     0.11±0.01     0.08±0.02     0.10±0.03     0.09±0.02     0.09±0.03 
+clients kept / round         36.93±1.01    31.96±0.66    28.64±0.79    23.95±0.84    19.86±0.93    16.33±0.87 
+
+Krum / bucket diagnostics                     20%      30%      40%      50%      60%      70%
+Trust-FLAD+Krum poison picked                0.00     0.00     0.00     0.00     0.00     0.01
+
+wrote dataset_fl-training-v3-ring/v3_sign_flip_f1_results_abl_W5.png
+
+################ results_abl_W20
+attack=sign_flip  seeds per ratio: {0.2: 0, 0.3: 0, 0.4: 0, 0.5: 0, 0.6: 0, 0.7: 0}
+
+method                               20%           30%           40%           50%           60%           70%
+FedAvg                                --            --            --            --            --            --
+Trust-FLAD                  0.792±0.09    0.859±0.04    0.912±0.03    0.917±0.03    0.965±0.01    0.966±0.01  
+Trust-FLAD+Krum             0.802±0.08    0.855±0.05    0.917±0.03    0.907±0.02    0.962±0.01    0.956±0.02  
+Trust-FLAD+Median           0.792±0.10    0.862±0.04    0.916±0.03    0.912±0.03    0.966±0.01    0.967±0.01  
+
+trust filter                         20%           30%           40%           50%           60%           70%
+beta (attackers passed)       0.05±0.02     0.04±0.02     0.04±0.01     0.05±0.02     0.04±0.02     0.06±0.02 
+gamma (honest rejected)       0.10±0.03     0.11±0.02     0.08±0.02     0.10±0.04     0.06±0.03     0.08±0.04 
+clients kept / round         36.52±1.09    31.65±0.82    28.57±0.88    23.70±1.05    20.07±1.02    15.91±0.90 
+
+Krum / bucket diagnostics                     20%      30%      40%      50%      60%      70%
+Trust-FLAD+Krum poison picked                0.00     0.00     0.00     0.00     0.00     0.01
+
+wrote dataset_fl-training-v3-ring/v3_sign_flip_f1_results_abl_W20.png
+
+################ results_onoff
+attack=sign_flip  seeds per ratio: {0.2: 5, 0.3: 5, 0.4: 5, 0.5: 5, 0.6: 5, 0.7: 5}
+
+method                               20%           30%           40%           50%           60%           70%
+FedAvg                      0.326±0.01    0.449±0.02    0.521±0.06    0.269±0.19    0.115±0.07    0.019±0.04  
+Krum                        0.523±0.09    0.729±0.06    0.601±0.06    0.665±0.04    0.694±0.07    0.725±0.07  
+TrimmedMean                 0.675±0.05    0.749±0.04    0.441±0.11    0.112±0.09    0.031±0.06    0.000±0.00  
+Median                      0.691±0.04    0.763±0.05    0.652±0.07    0.385±0.13    0.000±0.00    0.000±0.00  
+Krum+Bucket                 0.669±0.06    0.740±0.07    0.614±0.07    0.314±0.23    0.030±0.03    0.000±0.00  
+Median+Bucket               0.657±0.04    0.429±0.06    0.486±0.08    0.139±0.05    0.086±0.08    0.000±0.00  
+Trust-FLAD                  0.546±0.10    0.455±0.01    0.509±0.08    0.274±0.12    0.064±0.05    0.007±0.01  
+Trust-FLAD+Krum             0.544±0.12    0.740±0.05    0.722±0.04    0.767±0.04    0.769±0.03    0.789±0.03  
+Trust-FLAD+Median           0.686±0.04    0.756±0.05    0.707±0.06    0.762±0.04    0.592±0.24    0.000±0.00  
+Trust-FLAD+Krum+Bucket      0.692±0.04    0.746±0.08    0.673±0.06    0.729±0.09    0.447±0.24    0.000±0.00  
+Trust-FLAD+Median+Bucket    0.685±0.04    0.758±0.06    0.607±0.10    0.212±0.17    0.067±0.08    0.000±0.00  
+
+trust filter                         20%           30%           40%           50%           60%           70%
+beta (attackers passed)       0.51±0.03     0.50±0.01     0.54±0.04     0.51±0.03     0.53±0.01     0.54±0.02 
+gamma (honest rejected)       0.07±0.03     0.07±0.01     0.10±0.03     0.08±0.02     0.09±0.01     0.04±0.02 
+clients kept / round         42.35±1.13    39.99±0.57    37.60±1.20    35.77±0.96    34.18±0.37    33.31±0.82 
+
+Krum / bucket diagnostics                     20%      30%      40%      50%      60%      70%
+Krum poison picked                           0.00     0.00     0.00     0.00     0.00     0.09
+Krum+Bucket dirty buckets                    0.37     0.52     0.65     0.75     0.85     0.92
+Krum+Bucket poison picked                    0.00     0.00     0.05     0.67     0.90     0.93
+Median+Bucket dirty buckets                  0.37     0.52     0.65     0.75     0.85     0.92
+Trust-FLAD+Krum poison picked                0.00     0.00     0.00     0.00     0.00     0.05
+Trust-FLAD+Krum+Bucket dirty buckets         0.22     0.33     0.48     0.58     0.71     0.80
+Trust-FLAD+Krum+Bucket poison picked         0.00     0.00     0.00     0.04     0.47     0.80
+Trust-FLAD+Median+Bucket dirty buckets       0.22     0.33     0.48     0.58     0.71     0.80
+
+wrote dataset_fl-training-v3-ring/v3_sign_flip_f1_results_onoff.png
+
+################ results_onoff_mem30
+attack=sign_flip  seeds per ratio: {0.2: 0, 0.3: 0, 0.4: 0, 0.5: 0, 0.6: 0, 0.7: 0}
+
+method                               20%           30%           40%           50%           60%           70%
+FedAvg                                --            --            --            --            --            --
+Trust-FLAD                  0.682±0.05    0.738±0.07    0.644±0.07    0.692±0.13    0.419±0.19    0.040±0.08  
+Trust-FLAD+Krum             0.604±0.13    0.728±0.04    0.689±0.07    0.774±0.05    0.817±0.04    0.848±0.04  
+Trust-FLAD+Median           0.696±0.04    0.752±0.05    0.716±0.05    0.774±0.03    0.838±0.02    0.269±0.35  
+
+trust filter                         20%           30%           40%           50%           60%           70%
+beta (attackers passed)       0.18±0.02     0.16±0.02     0.22±0.04     0.21±0.06     0.23±0.02     0.24±0.04 
+gamma (honest rejected)       0.14±0.04     0.13±0.02     0.13±0.03     0.12±0.03     0.13±0.04     0.08±0.03 
+clients kept / round         36.13±1.69    32.84±0.94    30.39±0.45    27.16±1.80    24.45±1.24    22.15±1.42 
+
+Krum / bucket diagnostics                     20%      30%      40%      50%      60%      70%
+Trust-FLAD+Krum poison picked                0.00     0.00     0.00     0.00     0.00     0.00
+
+wrote dataset_fl-training-v3-ring/v3_sign_flip_f1_results_onoff_mem30.png
+
+################ results_onoff_mem60
+attack=sign_flip  seeds per ratio: {0.2: 0, 0.3: 0, 0.4: 0, 0.5: 0, 0.6: 0, 0.7: 0}
+
+method                               20%           30%           40%           50%           60%           70%
+FedAvg                                --            --            --            --            --            --
+Trust-FLAD                  0.670±0.05    0.728±0.07    0.692±0.06    0.761±0.05    0.819±0.04    0.320±0.34  
+Trust-FLAD+Krum             0.606±0.14    0.728±0.02    0.721±0.05    0.756±0.05    0.804±0.04    0.837±0.04  
+Trust-FLAD+Median           0.696±0.04    0.745±0.05    0.714±0.06    0.774±0.03    0.844±0.02    0.272±0.36  
+
+trust filter                         20%           30%           40%           50%           60%           70%
+beta (attackers passed)       0.17±0.02     0.12±0.02     0.18±0.04     0.17±0.05     0.18±0.02     0.20±0.04 
+gamma (honest rejected)       0.19±0.04     0.16±0.03     0.15±0.04     0.17±0.03     0.14±0.03     0.10±0.05 
+clients kept / round         34.09±1.54    31.36±1.29    29.08±0.76    25.06±1.33    22.63±1.01    20.47±1.08 
+
+Krum / bucket diagnostics                     20%      30%      40%      50%      60%      70%
+Trust-FLAD+Krum poison picked                0.00     0.00     0.00     0.00     0.00     0.00
+
+wrote dataset_fl-training-v3-ring/v3_sign_flip_f1_results_onoff_mem60.png
+
+################ results_onoff_mem90
+attack=sign_flip  seeds per ratio: {0.2: 0, 0.3: 0, 0.4: 0, 0.5: 0, 0.6: 0, 0.7: 0}
+
+method                               20%           30%           40%           50%           60%           70%
+FedAvg                                --            --            --            --            --            --
+Trust-FLAD                  0.668±0.05    0.729±0.07    0.693±0.07    0.759±0.05    0.839±0.03    0.319±0.34  
+Trust-FLAD+Krum             0.596±0.13    0.729±0.04    0.729±0.06    0.748±0.04    0.792±0.04    0.846±0.02  
+Trust-FLAD+Median           0.686±0.04    0.750±0.05    0.716±0.06    0.775±0.03    0.838±0.02    0.272±0.36  
+
+trust filter                         20%           30%           40%           50%           60%           70%
+beta (attackers passed)       0.17±0.02     0.12±0.02     0.18±0.03     0.17±0.05     0.18±0.03     0.20±0.04 
+gamma (honest rejected)       0.20±0.05     0.17±0.05     0.16±0.06     0.19±0.03     0.13±0.03     0.12±0.06 
+clients kept / round         33.83±1.72    30.73±1.90    28.84±1.35    24.63±1.31    22.70±1.14    20.12±0.99 
+
+Krum / bucket diagnostics                     20%      30%      40%      50%      60%      70%
+Trust-FLAD+Krum poison picked                0.00     0.00     0.00     0.00     0.00     0.00
+
+wrote dataset_fl-training-v3-ring/v3_sign_flip_f1_results_onoff_mem90.png
+
+
+################ results_labelflip (label_flip)
+attack=label_flip  seeds per ratio: {0.2: 5, 0.3: 5, 0.4: 5, 0.5: 5, 0.6: 5, 0.7: 5}
+
+method                               20%           30%           40%           50%           60%           70%
+FedAvg                      0.809±0.08    0.818±0.05    0.843±0.04    0.555±0.10    0.167±0.06    0.096±0.04  
+Krum                        0.732±0.09    0.856±0.03    0.908±0.03    0.462±0.29    0.030±0.02    0.029±0.01  
+TrimmedMean                 0.804±0.10    0.858±0.05    0.780±0.04    0.455±0.07    0.189±0.08    0.056±0.03  
+Median                      0.809±0.10    0.863±0.04    0.896±0.03    0.497±0.16    0.079±0.03    0.036±0.03  
+Krum+Bucket                 0.805±0.11    0.871±0.05    0.737±0.07    0.617±0.06    0.364±0.22    0.031±0.03  
+Median+Bucket               0.810±0.10    0.816±0.04    0.713±0.07    0.545±0.09    0.325±0.11    0.098±0.05  
+Trust-FLAD                  0.805±0.10    0.859±0.05    0.911±0.04    0.913±0.03    0.965±0.01    0.967±0.02  
+Trust-FLAD+Krum             0.789±0.09    0.845±0.06    0.909±0.04    0.903±0.02    0.958±0.01    0.954±0.02  
+Trust-FLAD+Median           0.792±0.11    0.861±0.04    0.913±0.03    0.911±0.03    0.966±0.01    0.964±0.01  
+Trust-FLAD+Krum+Bucket      0.797±0.10    0.871±0.05    0.908±0.04    0.906±0.04    0.965±0.01    0.959±0.01  
+Trust-FLAD+Median+Bucket    0.796±0.11    0.862±0.05    0.913±0.03    0.913±0.03    0.965±0.01    0.965±0.01  
+
+trust filter                         20%           30%           40%           50%           60%           70%
+beta (attackers passed)       0.05±0.02     0.05±0.02     0.05±0.01     0.05±0.02     0.05±0.02     0.06±0.02 
+gamma (honest rejected)       0.10±0.03     0.12±0.01     0.09±0.02     0.10±0.03     0.08±0.03     0.08±0.03 
+clients kept / round         36.48±0.94    31.49±0.50    28.31±0.79    23.78±0.84    19.94±1.03    15.88±0.61 
+
+Krum / bucket diagnostics                     20%      30%      40%      50%      60%      70%
+Krum poison picked                           0.00     0.00     0.00     0.53     1.00     1.00
+Krum+Bucket dirty buckets                    0.37     0.52     0.65     0.75     0.85     0.92
+Krum+Bucket poison picked                    0.00     0.10     0.76     1.00     1.00     1.00
+Median+Bucket dirty buckets                  0.37     0.52     0.65     0.75     0.85     0.92
+Trust-FLAD+Krum poison picked                0.00     0.00     0.00     0.01     0.02     0.05
+Trust-FLAD+Krum+Bucket dirty buckets         0.02     0.04     0.04     0.08     0.08     0.11
+Trust-FLAD+Krum+Bucket poison picked         0.00     0.00     0.01     0.01     0.05     0.07
+Trust-FLAD+Median+Bucket dirty buckets       0.02     0.04     0.04     0.08     0.08     0.11
+
+wrote dataset_fl-training-v3-ring/v3_label_flip_f1_results_labelflip.png
+
+################ results_lowshare (make_tables.py)
+% n seeds per column: 5 5 5 5 5 5 5 5 5 5
+No-attack ceiling & 0.66 & 0.80 & 0.87 & 0.92 & 0.96 & 0.66 & 0.80 & 0.87 & 0.92 & 0.96\\
+\midrule
+FedAvg & 0.68 & 0.33 & 0.41 & 0.06 & 0.24 & 0.71 & 0.81 & 0.82 & 0.55 & 0.10\\
+Krum & 0.59 & 0.72 & 0.87 & 0.78 & 0.69 & 0.60 & 0.73 & 0.86 & 0.46 & 0.03\\
+Trimmed mean & 0.67 & 0.79 & 0.84 & 0.08 & 0.00 & 0.69 & 0.80 & 0.86 & 0.45 & 0.06\\
+Median & 0.71 & 0.79 & 0.86 & 0.39 & 0.00 & 0.71 & 0.81 & 0.86 & 0.50 & 0.04\\
+Krum+Bucket & 0.65 & 0.78 & 0.84 & 0.42 & 0.09 & 0.66 & 0.81 & 0.87 & 0.62 & 0.03\\
+Median+Bucket & 0.66 & 0.80 & 0.47 & 0.02 & 0.19 & 0.70 & 0.81 & 0.82 & 0.55 & 0.10\\
+\midrule
+TF & 0.67 & 0.79 & 0.86 & 0.92 & 0.97 & 0.67 & 0.80 & 0.86 & 0.91 & 0.97\\
+TF+Krum & 0.61 & 0.79 & 0.85 & 0.90 & 0.94 & 0.61 & 0.79 & 0.85 & 0.90 & 0.95\\
+TF+Median & 0.70 & 0.80 & 0.87 & 0.91 & 0.97 & 0.70 & 0.79 & 0.86 & 0.91 & 0.96\\
+TF+Krum+Bucket & 0.65 & 0.80 & 0.87 & 0.91 & 0.97 & 0.66 & 0.80 & 0.87 & 0.91 & 0.96\\
+TF+Median+Bucket & 0.67 & 0.79 & 0.86 & 0.92 & 0.97 & 0.67 & 0.80 & 0.86 & 0.91 & 0.96\\
+\midrule
+$\beta$ & 0.04 & 0.05 & 0.05 & 0.05 & 0.06 & 0.04 & 0.05 & 0.05 & 0.05 & 0.06\\
+$\gamma$ & 0.11 & 0.10 & 0.12 & 0.10 & 0.08 & 0.11 & 0.10 & 0.12 & 0.10 & 0.08\\
+
+% Filter cost without poisoning (attack none): accuracy, F1, gamma, kept per round
+%  rho 0.00 n=5 | FedAvg acc 1.00 f1 0.00 | Median acc 1.00 f1 0.00 | Trust-FLAD acc 1.00 f1 0.00 | Trust-FLAD+Median acc 1.00 f1 0.00 | Trust-FLAD+Krum acc 1.00 f1 0.00 | gamma 0.12 kept 44.06
+%  rho 0.04 n=5 | FedAvg acc 0.96 f1 0.15 | Median acc 0.95 f1 0.00 | Trust-FLAD acc 0.96 f1 0.16 | Trust-FLAD+Median acc 0.95 f1 0.00 | Trust-FLAD+Krum acc 0.95 f1 0.00 | gamma 0.10 kept 43.08
+%  rho 0.10 n=5 | FedAvg acc 0.95 f1 0.66 | Median acc 0.95 f1 0.69 | Trust-FLAD acc 0.95 f1 0.67 | Trust-FLAD+Median acc 0.95 f1 0.70 | Trust-FLAD+Krum acc 0.93 f1 0.61 | gamma 0.11 kept 40.46

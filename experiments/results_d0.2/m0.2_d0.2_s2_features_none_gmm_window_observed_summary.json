@@ -1,0 +1,95 @@
+{
+  "config": {
+    "rounds_plain": 20,
+    "local_epochs": 3,
+    "batch_size": 128,
+    "lr": 0.01,
+    "trust_threshold": "gmm",
+    "test_vehicle_ratio": 0.2,
+    "seed": 2,
+    "krum_f": null,
+    "attack": "none",
+    "attack_scale": 5.0,
+    "attack_sigma": 1.0,
+    "alie_z": 1.0,
+    "uniform_after_filter": false,
+    "bucket_size": 2,
+    "trust_mode": "window",
+    "trust_window": 10.0,
+    "min_obs": 5,
+    "cold_start": "accept",
+    "clients": "observed",
+    "poison_set": "label",
+    "poison_frac": 0.3
+  },
+  "csv": "/Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.2_d0.2_s2_features.csv",
+  "folds": 3,
+  "results": {
+    "FedAvg": {
+      "accuracy": 0.9210204081632654,
+      "precision": 0.8219326818675353,
+      "recall": 0.7724489795918368,
+      "f1": 0.796422935297212,
+      "cm": [
+        [
+          3756,
+          164
+        ],
+        [
+          223,
+          757
+        ]
+      ],
+      "f1_folds": [
+        0.8184438040345822,
+        0.7432432432432432,
+        0.8227642276422764
+      ]
+    },
+    "Median": {
+      "accuracy": 0.9142857142857143,
+      "precision": 0.8043478260869565,
+      "recall": 0.7551020408163265,
+      "f1": 0.7789473684210526,
+      "cm": [
+        [
+          3740,
+          180
+        ],
+        [
+          240,
+          740
+        ]
+      ],
+      "f1_folds": [
+        0.7370030581039755,
+        0.7936,
+        0.8083735909822867
+      ]
+    },
+    "Trust-FLAD+Median": {
+      "accuracy": 0.9116326530612245,
+      "precision": 0.8147295742232451,
+      "recall": 0.7224489795918367,
+      "f1": 0.7658193618171985,
+      "cm": [
+        [
+          3759,
+          161
+        ],
+        [
+          272,
+          708
+        ]
+      ],
+      "beta": 0.225,
+      "gamma": 0.15125,
+      "accepted_mean": 36.2,
+      "f1_folds": [
+        0.7484662576687117,
+        0.7338842975206612,
+        0.8175675675675675
+      ]
+    }
+  }
+}

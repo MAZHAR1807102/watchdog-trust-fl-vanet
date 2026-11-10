@@ -1,0 +1,95 @@
+{
+  "config": {
+    "rounds_plain": 20,
+    "local_epochs": 3,
+    "batch_size": 128,
+    "lr": 0.01,
+    "trust_threshold": "gmm",
+    "test_vehicle_ratio": 0.2,
+    "seed": 4,
+    "krum_f": null,
+    "attack": "none",
+    "attack_scale": 5.0,
+    "attack_sigma": 1.0,
+    "alie_z": 1.0,
+    "uniform_after_filter": false,
+    "bucket_size": 2,
+    "trust_mode": "window",
+    "trust_window": 10.0,
+    "min_obs": 5,
+    "cold_start": "accept",
+    "clients": "observed",
+    "poison_set": "label",
+    "poison_frac": 0.3
+  },
+  "csv": "/Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.7_d0.2_s4_features.csv",
+  "folds": 3,
+  "results": {
+    "FedAvg": {
+      "accuracy": 0.8893877551020408,
+      "precision": 0.9013340744858255,
+      "recall": 0.9454810495626822,
+      "f1": 0.9228799089356858,
+      "cm": [
+        [
+          1115,
+          355
+        ],
+        [
+          187,
+          3243
+        ]
+      ],
+      "f1_folds": [
+        0.9347022587268994,
+        0.932803180914513,
+        0.8970163618864293
+      ]
+    },
+    "Median": {
+      "accuracy": 0.8951020408163265,
+      "precision": 0.9120972300734879,
+      "recall": 0.9408163265306122,
+      "f1": 0.9262342135476463,
+      "cm": [
+        [
+          1159,
+          311
+        ],
+        [
+          203,
+          3227
+        ]
+      ],
+      "f1_folds": [
+        0.9281585466556564,
+        0.9506072874493927,
+        0.894990366088632
+      ]
+    },
+    "Trust-FLAD+Median": {
+      "accuracy": 0.8934693877551021,
+      "precision": 0.9118980169971671,
+      "recall": 0.9384839650145773,
+      "f1": 0.925,
+      "cm": [
+        [
+          1159,
+          311
+        ],
+        [
+          211,
+          3219
+        ]
+      ],
+      "beta": 0.9314285714285715,
+      "gamma": 0.07,
+      "accepted_mean": 46.54999999999999,
+      "f1_folds": [
+        0.9258353708231459,
+        0.96,
+        0.882295719844358
+      ]
+    }
+  }
+}

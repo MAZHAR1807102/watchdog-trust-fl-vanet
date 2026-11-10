@@ -1,0 +1,121 @@
+/Users/mazharulislam/Downloads/Archive/V3_Codes/main_fl_v3.py:125: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /Users/runner/miniforge3/conda-bld/libtorch_1786372171945/work/torch/csrc/utils/tensor_numpy.cpp:219.)
+  self.y = torch.FloatTensor(y).unsqueeze(1)
+==============================================================
+TRUST-FLAD v3  --  windowed trust, label-free threshold, observed clients
+attack: none  threshold: gmm  trust: window (W=10.0s)
+==============================================================
+
+  /Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.2_d0.2_s3_features.csv  [v3 schema]
+  4900 rows | 50 vehicles | 10 malicious (20%)
+  fold 1/3 | split: 32 train / 18 test subject vehicles (disjoint) | 1764 test rows
+  clients: observed | rows/client min 489 median 756 max 953 | empty 0 | positive share 0.00-0.34
+
+==============================================================
+FedAvg
+==============================================================
+  round  1 t=  5.8s thr=0.802: acc=0.7778 f1=0.0000 
+  round  5 t= 25.2s thr=accept-all: acc=0.8832 f1=0.6508 
+  round 10 t= 49.5s thr=0.812: acc=0.8883 f1=0.6700 
+  round 15 t= 73.8s thr=0.693: acc=0.8838 f1=0.6508 
+  round 20 t= 98.0s thr=0.818: acc=0.8895 f1=0.6734 
+  FINAL  acc=0.8895 P=0.9805 R=0.5128 F1=0.6734
+
+==============================================================
+Median
+==============================================================
+  round  1 t=  5.8s thr=0.802: acc=0.7778 f1=0.0000 f=12
+  round  5 t= 25.2s thr=accept-all: acc=0.8855 f1=0.6599 f=12
+  round 10 t= 49.5s thr=0.812: acc=0.8844 f1=0.6542 f=12
+  round 15 t= 73.8s thr=0.693: acc=0.8764 f1=0.6202 f=12
+  round 20 t= 98.0s thr=0.818: acc=0.8634 f1=0.5658 f=12
+  FINAL  acc=0.8634 P=0.9632 R=0.4005 F1=0.5658
+
+==============================================================
+Trust-FLAD+Median
+==============================================================
+  round  1 t=  5.8s thr=0.802: acc=0.7778 f1=0.0000 acc_hon=31 acc_mal=4 rej_hon=9 rej_mal=6 unknown=22
+  round  5 t= 25.2s thr=accept-all: acc=0.8815 f1=0.6440 acc_hon=40 acc_mal=10 rej_hon=0 rej_mal=0 unknown=0
+  round 10 t= 49.5s thr=0.812: acc=0.8781 f1=0.6312 acc_hon=34 acc_mal=1 rej_hon=6 rej_mal=9 unknown=0
+  round 15 t= 73.8s thr=0.693: acc=0.8690 f1=0.5926 acc_hon=38 acc_mal=7 rej_hon=2 rej_mal=3 unknown=0
+  round 20 t= 98.0s thr=0.818: acc=0.8622 f1=0.5622 acc_hon=35 acc_mal=2 rej_hon=5 rej_mal=8 unknown=0
+  FINAL  acc=0.8622 P=0.9571 R=0.3980 F1=0.5622  beta=0.21 gamma=0.13
+
+  /Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.2_d0.2_s3_features.csv  [v3 schema]
+  4900 rows | 50 vehicles | 10 malicious (20%)
+  fold 2/3 | split: 34 train / 16 test subject vehicles (disjoint) | 1568 test rows
+  clients: observed | rows/client min 485 median 759 max 1156 | empty 0 | positive share 0.00-0.44
+
+==============================================================
+FedAvg
+==============================================================
+  round  1 t=  5.8s thr=0.802: acc=0.8125 f1=0.0000 
+  round  5 t= 25.2s thr=accept-all: acc=0.8699 f1=0.6611 
+  round 10 t= 49.5s thr=0.812: acc=0.8795 f1=0.6966 
+  round 15 t= 73.8s thr=0.693: acc=0.8852 f1=0.7188 
+  round 20 t= 98.0s thr=0.818: acc=0.8916 f1=0.7352 
+  FINAL  acc=0.8916 P=0.6782 R=0.8027 F1=0.7352
+
+==============================================================
+Median
+==============================================================
+  round  1 t=  5.8s thr=0.802: acc=0.8125 f1=0.0000 f=12
+  round  5 t= 25.2s thr=accept-all: acc=0.8642 f1=0.6537 f=12
+  round 10 t= 49.5s thr=0.812: acc=0.8967 f1=0.7618 f=12
+  round 15 t= 73.8s thr=0.693: acc=0.8999 f1=0.7715 f=12
+  round 20 t= 98.0s thr=0.818: acc=0.8846 f1=0.7278 f=12
+  FINAL  acc=0.8846 P=0.6523 R=0.8231 F1=0.7278
+
+==============================================================
+Trust-FLAD+Median
+==============================================================
+  round  1 t=  5.8s thr=0.802: acc=0.8125 f1=0.0000 acc_hon=31 acc_mal=4 rej_hon=9 rej_mal=6 unknown=22
+  round  5 t= 25.2s thr=accept-all: acc=0.8591 f1=0.6441 acc_hon=40 acc_mal=10 rej_hon=0 rej_mal=0 unknown=0
+  round 10 t= 49.5s thr=0.812: acc=0.8763 f1=0.6997 acc_hon=34 acc_mal=1 rej_hon=6 rej_mal=9 unknown=0
+  round 15 t= 73.8s thr=0.693: acc=0.9037 f1=0.7770 acc_hon=38 acc_mal=7 rej_hon=2 rej_mal=3 unknown=0
+  round 20 t= 98.0s thr=0.818: acc=0.8922 f1=0.7489 acc_hon=35 acc_mal=2 rej_hon=5 rej_mal=8 unknown=0
+  FINAL  acc=0.8922 P=0.6649 R=0.8571 F1=0.7489  beta=0.21 gamma=0.13
+
+  /Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.2_d0.2_s3_features.csv  [v3 schema]
+  4900 rows | 50 vehicles | 10 malicious (20%)
+  fold 3/3 | split: 34 train / 16 test subject vehicles (disjoint) | 1568 test rows
+  clients: observed | rows/client min 560 median 768 max 1109 | empty 0 | positive share 0.00-0.45
+
+==============================================================
+FedAvg
+==============================================================
+  round  1 t=  5.8s thr=0.802: acc=0.8125 f1=0.0000 
+  round  5 t= 25.2s thr=accept-all: acc=0.8833 f1=0.6850 
+  round 10 t= 49.5s thr=0.812: acc=0.8801 f1=0.6792 
+  round 15 t= 73.8s thr=0.693: acc=0.8801 f1=0.6792 
+  round 20 t= 98.0s thr=0.818: acc=0.8776 f1=0.6701 
+  FINAL  acc=0.8776 P=0.6771 R=0.6633 F1=0.6701
+
+==============================================================
+Median
+==============================================================
+  round  1 t=  5.8s thr=0.802: acc=0.8125 f1=0.0000 f=12
+  round  5 t= 25.2s thr=accept-all: acc=0.8871 f1=0.7065 f=12
+  round 10 t= 49.5s thr=0.812: acc=0.8820 f1=0.6891 f=12
+  round 15 t= 73.8s thr=0.693: acc=0.8763 f1=0.6689 f=12
+  round 20 t= 98.0s thr=0.818: acc=0.8686 f1=0.6411 f=12
+  FINAL  acc=0.8686 P=0.6571 R=0.6259 F1=0.6411
+
+==============================================================
+Trust-FLAD+Median
+==============================================================
+  round  1 t=  5.8s thr=0.802: acc=0.8125 f1=0.0000 acc_hon=31 acc_mal=4 rej_hon=9 rej_mal=6 unknown=22
+  round  5 t= 25.2s thr=accept-all: acc=0.8673 f1=0.6376 acc_hon=40 acc_mal=10 rej_hon=0 rej_mal=0 unknown=0
+  round 10 t= 49.5s thr=0.812: acc=0.8680 f1=0.6387 acc_hon=34 acc_mal=1 rej_hon=6 rej_mal=9 unknown=0
+  round 15 t= 73.8s thr=0.693: acc=0.8571 f1=0.5971 acc_hon=38 acc_mal=7 rej_hon=2 rej_mal=3 unknown=0
+  round 20 t= 98.0s thr=0.818: acc=0.8578 f1=0.5982 acc_hon=35 acc_mal=2 rej_hon=5 rej_mal=8 unknown=0
+  FINAL  acc=0.8578 P=0.6360 R=0.5646 F1=0.5982  beta=0.21 gamma=0.13
+
+=================================================================================
+Method                         Acc    Prec     Rec      F1    beta   gamma   kept
+---------------------------------------------------------------------------------
+FedAvg                      0.8863  0.7515  0.6449  0.6941                       
+Median                      0.8718  0.7162  0.5949  0.6499                       
+Trust-FLAD+Median           0.8704  0.7148  0.5857  0.6439    0.21    0.13   37.0
+=================================================================================
+beta = attacker pass rate, gamma = honest rejection rate, kept = clients aggregated/round
+wrote /Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/results_d0.2/m0.2_d0.2_s3_features_none_gmm_window_observed_*.csv and _summary.json

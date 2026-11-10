@@ -1,0 +1,121 @@
+/Users/mazharulislam/Downloads/Archive/V3_Codes/main_fl_v3.py:126: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /Users/runner/miniforge3/conda-bld/libtorch_1786372171945/work/torch/csrc/utils/tensor_numpy.cpp:219.)
+  self.y = torch.FloatTensor(y).unsqueeze(1)
+==============================================================
+TRUST-FLAD v3  --  windowed trust, label-free threshold, observed clients
+attack: sign_flip  threshold: gmm  trust: window (W=10.0s)
+==============================================================
+
+  /Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.6_d0.9_on10off20_s5_features.csv  [v3 schema]
+  4900 rows | 50 vehicles | 30 malicious (60%)
+  fold 1/3 | split: 33 train / 17 test subject vehicles (disjoint) | 1666 test rows
+  clients: observed | rows/client min 407 median 734 max 1267 | empty 0 | positive share 0.27-0.78
+
+==============================================================
+Trust-FLAD
+==============================================================
+  round  1 t=  5.8s thr=0.452: acc=0.4520 f1=0.1280 acc_hon=20 acc_mal=26 rej_hon=0 rej_mal=4 unknown=29
+  round  5 t= 25.2s thr=0.621: acc=0.4118 f1=0.0000 acc_hon=19 acc_mal=10 rej_hon=1 rej_mal=20 unknown=0
+  round 10 t= 49.5s thr=0.564: acc=0.4118 f1=0.0000 acc_hon=19 acc_mal=3 rej_hon=1 rej_mal=27 unknown=0
+  round 15 t= 73.8s thr=0.744: acc=0.7317 f1=0.7400 acc_hon=16 acc_mal=0 rej_hon=4 rej_mal=30 unknown=0
+  round 20 t= 98.0s thr=0.570: acc=0.5870 f1=0.5855 acc_hon=18 acc_mal=6 rej_hon=2 rej_mal=24 unknown=0
+  FINAL  acc=0.5870 P=0.7147 R=0.4959 F1=0.5855  beta=0.24 gamma=0.10
+
+==============================================================
+Trust-FLAD+Krum
+==============================================================
+  round  1 t=  5.8s thr=0.452: acc=0.5276 f1=0.5767 acc_hon=20 acc_mal=26 rej_hon=0 rej_mal=4 unknown=29 pick_mal=0
+  round  5 t= 25.2s thr=0.621: acc=0.7923 f1=0.8244 acc_hon=19 acc_mal=10 rej_hon=1 rej_mal=20 unknown=0 pick_mal=0
+  round 10 t= 49.5s thr=0.564: acc=0.6969 f1=0.7329 acc_hon=19 acc_mal=3 rej_hon=1 rej_mal=27 unknown=0 pick_mal=0
+  round 15 t= 73.8s thr=0.744: acc=0.7185 f1=0.7402 acc_hon=16 acc_mal=0 rej_hon=4 rej_mal=30 unknown=0 pick_mal=0
+  round 20 t= 98.0s thr=0.570: acc=0.7797 f1=0.8055 acc_hon=18 acc_mal=6 rej_hon=2 rej_mal=24 unknown=0 pick_mal=0
+  FINAL  acc=0.7797 P=0.8379 R=0.7755 F1=0.8055  beta=0.24 gamma=0.10
+
+==============================================================
+Trust-FLAD+Median
+==============================================================
+  round  1 t=  5.8s thr=0.452: acc=0.4088 f1=0.0000 acc_hon=20 acc_mal=26 rej_hon=0 rej_mal=4 unknown=29
+  round  5 t= 25.2s thr=0.621: acc=0.7011 f1=0.7215 acc_hon=19 acc_mal=10 rej_hon=1 rej_mal=20 unknown=0
+  round 10 t= 49.5s thr=0.564: acc=0.8469 f1=0.8621 acc_hon=19 acc_mal=3 rej_hon=1 rej_mal=27 unknown=0
+  round 15 t= 73.8s thr=0.744: acc=0.8247 f1=0.8503 acc_hon=16 acc_mal=0 rej_hon=4 rej_mal=30 unknown=0
+  round 20 t= 98.0s thr=0.570: acc=0.7845 f1=0.8149 acc_hon=18 acc_mal=6 rej_hon=2 rej_mal=24 unknown=0
+  FINAL  acc=0.7845 P=0.8238 R=0.8061 F1=0.8149  beta=0.24 gamma=0.10
+
+  /Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.6_d0.9_on10off20_s5_features.csv  [v3 schema]
+  4900 rows | 50 vehicles | 30 malicious (60%)
+  fold 2/3 | split: 33 train / 17 test subject vehicles (disjoint) | 1666 test rows
+  clients: observed | rows/client min 496 median 750 max 1146 | empty 0 | positive share 0.31-1.00
+
+==============================================================
+Trust-FLAD
+==============================================================
+  round  1 t=  5.8s thr=0.452: acc=0.4196 f1=0.0397 acc_hon=20 acc_mal=26 rej_hon=0 rej_mal=4 unknown=29
+  round  5 t= 25.2s thr=0.621: acc=0.4118 f1=0.0000 acc_hon=19 acc_mal=10 rej_hon=1 rej_mal=20 unknown=0
+  round 10 t= 49.5s thr=0.564: acc=0.4118 f1=0.0000 acc_hon=19 acc_mal=3 rej_hon=1 rej_mal=27 unknown=0
+  round 15 t= 73.8s thr=0.744: acc=0.8169 f1=0.8470 acc_hon=16 acc_mal=0 rej_hon=4 rej_mal=30 unknown=0
+  round 20 t= 98.0s thr=0.570: acc=0.7905 f1=0.8215 acc_hon=18 acc_mal=6 rej_hon=2 rej_mal=24 unknown=0
+  FINAL  acc=0.7905 P=0.8236 R=0.8194 F1=0.8215  beta=0.24 gamma=0.10
+
+==============================================================
+Trust-FLAD+Krum
+==============================================================
+  round  1 t=  5.8s thr=0.452: acc=0.7455 f1=0.7543 acc_hon=20 acc_mal=26 rej_hon=0 rej_mal=4 unknown=29 pick_mal=0
+  round  5 t= 25.2s thr=0.621: acc=0.8601 f1=0.8874 acc_hon=19 acc_mal=10 rej_hon=1 rej_mal=20 unknown=0 pick_mal=0
+  round 10 t= 49.5s thr=0.564: acc=0.8109 f1=0.8449 acc_hon=19 acc_mal=3 rej_hon=1 rej_mal=27 unknown=0 pick_mal=0
+  round 15 t= 73.8s thr=0.744: acc=0.8025 f1=0.8334 acc_hon=16 acc_mal=0 rej_hon=4 rej_mal=30 unknown=0 pick_mal=0
+  round 20 t= 98.0s thr=0.570: acc=0.8307 f1=0.8605 acc_hon=18 acc_mal=6 rej_hon=2 rej_mal=24 unknown=0 pick_mal=0
+  FINAL  acc=0.8307 P=0.8349 R=0.8878 F1=0.8605  beta=0.24 gamma=0.10
+
+==============================================================
+Trust-FLAD+Median
+==============================================================
+  round  1 t=  5.8s thr=0.452: acc=0.4178 f1=0.0202 acc_hon=20 acc_mal=26 rej_hon=0 rej_mal=4 unknown=29
+  round  5 t= 25.2s thr=0.621: acc=0.7851 f1=0.8247 acc_hon=19 acc_mal=10 rej_hon=1 rej_mal=20 unknown=0
+  round 10 t= 49.5s thr=0.564: acc=0.8055 f1=0.8467 acc_hon=19 acc_mal=3 rej_hon=1 rej_mal=27 unknown=0
+  round 15 t= 73.8s thr=0.744: acc=0.8097 f1=0.8518 acc_hon=16 acc_mal=0 rej_hon=4 rej_mal=30 unknown=0
+  round 20 t= 98.0s thr=0.570: acc=0.8193 f1=0.8577 acc_hon=18 acc_mal=6 rej_hon=2 rej_mal=24 unknown=0
+  FINAL  acc=0.8193 P=0.7991 R=0.9255 F1=0.8577  beta=0.24 gamma=0.10
+
+  /Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/data/m0.6_d0.9_on10off20_s5_features.csv  [v3 schema]
+  4900 rows | 50 vehicles | 30 malicious (60%)
+  fold 3/3 | split: 34 train / 16 test subject vehicles (disjoint) | 1568 test rows
+  clients: observed | rows/client min 619 median 794 max 965 | empty 0 | positive share 0.43-0.80
+
+==============================================================
+Trust-FLAD
+==============================================================
+  round  1 t=  5.8s thr=0.452: acc=0.3980 f1=0.0709 acc_hon=20 acc_mal=26 rej_hon=0 rej_mal=4 unknown=29
+  round  5 t= 25.2s thr=0.621: acc=0.3750 f1=0.0000 acc_hon=19 acc_mal=10 rej_hon=1 rej_mal=20 unknown=0
+  round 10 t= 49.5s thr=0.564: acc=0.3750 f1=0.0000 acc_hon=19 acc_mal=3 rej_hon=1 rej_mal=27 unknown=0
+  round 15 t= 73.8s thr=0.744: acc=0.8240 f1=0.8546 acc_hon=16 acc_mal=0 rej_hon=4 rej_mal=30 unknown=0
+  round 20 t= 98.0s thr=0.570: acc=0.7621 f1=0.7743 acc_hon=18 acc_mal=6 rej_hon=2 rej_mal=24 unknown=0
+  FINAL  acc=0.7621 P=0.9510 R=0.6531 F1=0.7743  beta=0.24 gamma=0.10
+
+==============================================================
+Trust-FLAD+Krum
+==============================================================
+  round  1 t=  5.8s thr=0.452: acc=0.5261 f1=0.5727 acc_hon=20 acc_mal=26 rej_hon=0 rej_mal=4 unknown=29 pick_mal=0
+  round  5 t= 25.2s thr=0.621: acc=0.7895 f1=0.8318 acc_hon=19 acc_mal=10 rej_hon=1 rej_mal=20 unknown=0 pick_mal=0
+  round 10 t= 49.5s thr=0.564: acc=0.8814 f1=0.9081 acc_hon=19 acc_mal=3 rej_hon=1 rej_mal=27 unknown=0 pick_mal=0
+  round 15 t= 73.8s thr=0.744: acc=0.8884 f1=0.9116 acc_hon=16 acc_mal=0 rej_hon=4 rej_mal=30 unknown=0 pick_mal=0
+  round 20 t= 98.0s thr=0.570: acc=0.8495 f1=0.8809 acc_hon=18 acc_mal=6 rej_hon=2 rej_mal=24 unknown=0 pick_mal=0
+  FINAL  acc=0.8495 P=0.8713 R=0.8908 F1=0.8809  beta=0.24 gamma=0.10
+
+==============================================================
+Trust-FLAD+Median
+==============================================================
+  round  1 t=  5.8s thr=0.452: acc=0.4056 f1=0.4619 acc_hon=20 acc_mal=26 rej_hon=0 rej_mal=4 unknown=29
+  round  5 t= 25.2s thr=0.621: acc=0.8922 f1=0.9087 acc_hon=19 acc_mal=10 rej_hon=1 rej_mal=20 unknown=0
+  round 10 t= 49.5s thr=0.564: acc=0.8718 f1=0.8975 acc_hon=19 acc_mal=3 rej_hon=1 rej_mal=27 unknown=0
+  round 15 t= 73.8s thr=0.744: acc=0.8603 f1=0.8887 acc_hon=16 acc_mal=0 rej_hon=4 rej_mal=30 unknown=0
+  round 20 t= 98.0s thr=0.570: acc=0.8291 f1=0.8623 acc_hon=18 acc_mal=6 rej_hon=2 rej_mal=24 unknown=0
+  FINAL  acc=0.8291 P=0.8685 R=0.8561 F1=0.8623  beta=0.24 gamma=0.10
+
+=================================================================================
+Method                         Acc    Prec     Rec      F1    beta   gamma   kept
+---------------------------------------------------------------------------------
+Trust-FLAD                  0.7122  0.8286  0.6561  0.7323    0.24    0.10   25.1
+Trust-FLAD+Krum             0.8194  0.8482  0.8514  0.8498    0.24    0.10   25.1
+Trust-FLAD+Median           0.8106  0.8288  0.8626  0.8453    0.24    0.10   25.1
+=================================================================================
+beta = attacker pass rate, gamma = honest rejection rate, kept = clients aggregated/round
+wrote /Users/mazharulislam/Downloads/Archive/V3_Codes/../dataset_fl-training-v3-ring/results_onoff_mem30/m0.6_d0.9_on10off20_s5_features_sign_flip_gmm_window_observed_mem30_*.csv and _summary.json
